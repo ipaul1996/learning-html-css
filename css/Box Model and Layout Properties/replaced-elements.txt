@@ -1,0 +1,28 @@
+In CSS, a replaced element is an element whose representation is outside the scope of CSS; they're external objects whose representation is independent of the CSS formatting model.
+Put in simpler terms, they're elements whose contents are not affected by the current document's styles. The position of the replaced element can be affected using CSS, but not the contents of the replaced element itself.
+Examples: <audio>, <canvas>, <iframe>, <img>, <input>, <select>, <textarea>, <video>
+
+***************************************************************************************
+object-fit:
+The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container.
+
+values: 
+contain - The replaced content is scaled to maintain its aspect ratio while fitting within the element's content box.
+
+cover - The replaced content is sized to maintain its aspect ratio while filling the element's entire content box. If the object's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit.
+
+fill - The replaced content is sized to fill the element's content box. The entire object will completely fill the box. If the object's aspect ratio does not match the aspect ratio of its box, then the object will be stretched to fit.
+
+none - The replaced content is not resized.
+
+scale-down - The content is sized as if none or contain were specified, whichever would result in a smaller concrete object size.
+
+***************************************************************************************
+
+object-position - The object-position CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+
+values - keyword values(top, right, bottom, left, center), <percentage> values, <length> values
+object-position: 50% 50%;
+object-position: right top;
+object-position: left top;
+object-position: 250px 125px;

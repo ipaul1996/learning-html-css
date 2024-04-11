@@ -1,0 +1,10 @@
+.container {
+  max-width: 400px;
+  max-height: 300px;
+  border: 1px solid;
+  overflow: scroll;
+  /* values: visible, hidden, clip, scroll, auto */
+  /* 
+    visible: 
+  */
+}

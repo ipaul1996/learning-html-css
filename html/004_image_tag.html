@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Tag</title>
+  </head>
+  <body>
+    <img
+      src="https://images.unsplash.com/photo-1707343844436-37580f155ed2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Unsplash_Image"
+      width="440px"
+      height="220px"
+      loading="lazy"
+      decoding="async"
+    />
+  </body>
+</html>
+
+<!-- Supported Image Formats: apng, avif, gif, jpeg, png, spg, webp -->
+<!-- src - It is required, and contains the path to the image you want to embed. -->
+<!-- alt - The alt attribute holds a textual replacement for the image, which is mandatory and incredibly useful for accessibility — screen readers read the attribute value out to their users so they know what the image means. Alt text is also displayed on the page if the image can't be loaded for some reason: for example, network errors, content blocking, or linkrot. -->
+<!-- decoding[sync, async, auto] - It controls how the browser processes and prepares the image data for rendering after it's been downloaded.
+sync = Decode the image synchronously along with rendering the other DOM content, and present everything together.
+async = Decode the image asynchronously, after rendering and presenting the other DOM content.
+auto = No preference for the decoding mode; the browser decides what is best for the user. This is the default value.  -->
+
+<!-- loading[eager, lazy] - It indicates how the browser should load the image. 
+eager = Loads the image immediately, regardless of whether or not the image is currently within the visible viewport (this is the default value).
+lazy = Defers loading the image until it reaches a calculated distance from the viewport, as defined by the browser. The intent is to avoid the network and storage bandwidth needed to handle the image until it's reasonably certain that it will be needed. This generally improves the performance of the content in most typical use cases.-->

@@ -1,0 +1,52 @@
+.container1 {
+  background-color: teal;
+  /* 
+    The background-color property is used to define the background color of an element. It specifies the color that fills the background area behind the content and padding of the element. 
+  */
+  height: 300px;
+  padding: 15px;
+  border: 3px dotted black;
+}
+
+.container1 > p {
+  color: whitesmoke;
+  /* 
+      The color property is used to specify the text color of an element. 
+      Colors are specified using,
+        1. predefined color names, 
+        2. RGB function(a color by its red, green, and blue components. Each component is expressed as an integer between 0 and 255), 
+        3. RGBA function(a color using red, green, blue, and an additional alpha channel representing the color's transparency. The alpha value is a number between 0 and 1, where 0 represents fully transparent and 1 represents fully opaque.), 
+        4. HEX(Hexadecimal Notation - It represents the intensity of red, green, and blue (RGB) components of the color. eg., #FF0000), 
+        5. HSL(hue, saturation, lightness - Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue. Saturation is a percentage value. 0% means a shade of gray, and 100% is the full color. Lightness is also a percentage. 0% is black, 50% is neither light or dark, 100% is white),  
+        6. HSLA values(Similar to HSL values but with an additional alpha channel for transparency, using the hsla() function.). 
+    */
+}
+
+.container2 {
+  height: 500px;
+  width: 1050px;
+  background-image: url("https://images.unsplash.com/photo-1710170601723-54d0420b8773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8");
+  /*
+      (default value: none)
+
+      background-image: url("https://images.unsplash.com/photo-1710170601723-54d0420b8773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8"), url("https://images.unsplash.com/photo-1712433052101-055a988678a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D");
+
+      background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("https://images.unsplash.com/photo-1710170601723-54d0420b8773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8");
+      
+      The background-image property is used to specify one or more background images for an element. It allows us to set an image to be displayed in the background of an element, filling the entire background area behind the content and padding. When setting a background image, it's essential to consider the size and dimensions of the image relative to the element it's applied to. By default, the image will repeat both horizontally and vertically to fill the entire background area. We can control the repetition behavior using `background-repeat`. The background image will be positioned by default at the top-left corner of the element's padding box. We can control the position of the background image using `background-position`. We can also control the size of the background image using background-size. Always set a background-color to be used if the image is unavailable.
+      
+    */
+
+  background-repeat: repeat;
+  /*  values: repeat-x, repeat-y, repeat(default), space, round, no-repeat;
+  /* Two-value syntax: horizontal | vertical --> repeat space / repeat repeat / round space /no-repeat round */
+  /* 
+      The background-repeat CSS property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
+
+      no-repeat --> It displays the background image only once, without any repetition. If the background area is larger than the image, the remaining area will be transparent (or filled with the background-color if specified)
+
+      space --> It repeats the background image both horizontally and vertically, but spaces the tiles evenly so that they fill the entire background area with no partial tiles at the edges. If the image doesn't perfectly fit, it will be scaled to ensure even spacing.
+
+      round --> It repeats the background image both horizontally and vertically, scaling the image if necessary to ensure that the tiles are evenly spaced and that whole tiles are displayed. This may result in scaling of the image to fit, potentially distorting the image.
+  */
+}

@@ -1,0 +1,166 @@
+Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items.
+In CSS we have two types of boxes - block boxes and inline boxes. The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.
+
+Outer display type:
+
+If a box has an outer display type of block(display: block;), then,
+
+The box will break onto a new line.
+The width and height properties are respected.
+Padding, margin and border will cause other elements to be pushed away from the box.
+If width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+
+If a box has an outer display type of inline(display: inline;), then,
+The box will not break onto a new line.
+The width and height properties will not apply.
+Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+
+
+
+Inner display type:
+Boxes also have an inner display type, which dictates how elements inside that box are laid out.
+Block and inline layout is the default way things behave on the web. By default and without any other instruction, the elements inside a box are also laid out in normal flow(Block-level elements typically stack vertically on top of each other, each taking up the full width available to their parent container, and automatically starting on a new line and Inline-level elements flow within the text content, typically sitting next to each other horizontally within their containing block).
+We can change the inner display type for example by setting display: flex;. The element will still use the outer display type block but this changes the inner display type to flex. Any direct children of this box will become flex items and behave according to the Flexbox specification.
+
+Examples:
+
+- A paragraph with a border added in CSS. The browser renders this as a block box. The paragraph starts on a new line and extends the entire available width.
+- A list, which is laid out using display: flex. This establishes flex layout for the children of the container, which are flex items. The list itself is a block box and — like the paragraph — expands to the full container width and breaks onto a new line.
+- A block-level paragraph, inside which are two <span> elements. These elements would normally be inline, however, one of the elements has a class of "block" which gets set to display: block.
+
+
+
+What is the CSS box model?
+The CSS box model as a whole applies to block boxes and defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on a page. Inline boxes use just some of the behavior defined in the box model
+
+Parts of a box:-
+Content box: The area where your content is displayed; size it using properties like inline-size and block-size or width and height.
+Padding box: The padding sits around the content as white space; size it using padding and related properties.
+Border box: The border box wraps the content and any padding; size it using border and related properties.
+Margin box: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements; size it using margin and related properties.
+
+The standard CSS box model:-
+If you set width and height property values on a box, these values define width and height of the content box. Any padding and borders are then added to those dimensions to get the total size taken up by the box.
+
+.box {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+Here, the actual space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).
+Point to be noted that the margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
+
+Width:
+The width property sets the width of an element. By default, it sets the width of the content area i.e., the width of an element does not include padding, borders, or margins!
+values: <length> values, <percentage> value, max-content, min-content, fit-content, auto(default)
+
+max-content -->  Imagine you have a box, and you want to stretch it as much as possible without letting its content overflow or wrap onto the next line. Max-content does just that. It expands the box to fit the widest part of its content without causing overflow.
+
+min-content --> Now, let's say you have another box, and you want it to shrink down as much as possible without squishing its content or forcing it to wrap onto a new line. That's min-content. It collapses the box to fit the smallest width required by its content.
+
+fit-content --> This is like finding a balance between max-content and min-content. Fit-content allows the box to expand to fit its widest content up to a certain limit, which is defined by the containing element's width or any specified max-width. It's flexible but won't exceed the specified maximum width.
+
+auto --> When you set width to auto, the browser decides the width for you. For block-level elements, it usually takes up the available width in its container. For inline-level elements, it's often based on the content's natural width unless there are constraints like floating or absolute positioning.
+
+The specified value of width applies to the content area so long as its value remains within the values defined by min-width and max-width.
+- If the value for width is less than the value for min-width, then min-width overrides width.
+- If the value for width is greater than the value for max-width, then max-width overrides width.
+
+
+
+Height:
+The height property sets the height of an element. By default, the property defines the height of the content area i.e., of an element does not include padding, borders, or margins!
+values: <length> values, <percentage> value, max-content, min-content, fit-content, auto(default)
+
+Max-width & Min-width:
+The max-width CSS property sets the maximum width of an element. It prevents the used value of the width property from becoming larger than the value specified by max-width.
+The min-width CSS property sets the minimum width of an element. It prevents the used value of the width property from becoming smaller than the value specified for min-width.
+max-width overrides width, but min-width overrides max-width.
+values: <length> values, <percentage> value, max-content, min-content, fit-content, auto
+
+Max-height & Min-height:
+The max-height CSS property sets the maximum height of an element. It prevents the used value of the height property from becoming larger than the value specified by max-height.
+The min-height CSS property sets the minimum height of an element. It prevents the used value of the height property from becoming smaller than the value specified for min-height.
+max-height overrides height, but min-height overrides max-height.
+values: <length> values, <percentage> value, max-content, min-content, fit-content, auto
+
+
+
+Margin:
+The margin is an invisible space around your box. It pushes other elements away from the box. Margins can have positive or negative values. Setting a negative margin on one side of your box can cause it to overlap other things on the page. Whether you are using the standard or alternative box model, the margin is always added after the size of the visible box has been calculated.
+CSS properties: margin, margin-top, margin-right, margin-bottom, margin-left
+Values: <length>, <percentage>, auto(browser selects a suitable margin to use. For example, in certain cases this value can be used to center an element)
+
+margin: 5px; // Apply to all sides of the box
+margin: 5% auto; // top and bottom | left and right
+margin: 1em auto 2em; // top | left and right | bottom
+margin: 2px 1em 0 auto; // top | right | bottom | left (clockwise)
+
+Depending on whether two elements whose margins touch have positive or negative margins, the results will be different:
+- Two positive margins will combine to become one margin. Its size will be equal to the largest individual margin (or just one of them, if they are equal).
+- Two negative margins will collapse and the smallest (furthest from zero) value will be used.
+- If one margin is negative, its value will be subtracted from the total.
+(Note that the margins of floating and absolutely positioned elements never collapse)
+
+
+
+Borders:
+The border is drawn between the margin and the padding of a box. If you are using the standard box model, the size of the border is added to the width and height of the content box.
+For styling borders, there are a large number of properties — there are four borders, and each border has a style, width, and color that we might want to manipulate.
+CSS properties: border[width style color --> 1px solid red], border-top, border-right, border-bottom, border-left, border-width, border-style, border-color, border-top-width, border-top-style, border-top-color, border-right-width, border-right-style, border-right-color, border-bottom-width, border-bottom-style, border-bottom-color, border-left-width, border-left-style, border-left-color
+
+Border-radius:
+The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. The radius applies to the whole background, even if the element has no border;
+values: <length> values, <percentage> value
+
+border-radius: 10px; /* Radius is set for all 4 sides */
+border-radius: 10px 5%; /* top-left-and-bottom-right | top-right-and-bottom-left */
+border-radius: 2px 4px 2px; /* top-left | top-right-and-bottom-left | bottom-right */
+border-radius: 1px 0 3px 4px; /* top-left | top-right | bottom-right | bottom-left */
+
+
+
+
+Padding:
+The padding sits between the border and the content area and is used to push the content away from the border. Unlike margins, you cannot have a negative padding. Any background applied to your element will display behind the padding.
+CSS Properties: padding, padding-top, padding-right, padding-bottom, padding-left
+Values: <length>, <percentage>
+
+padding: 5px; // Apply to all sides of the box
+padding: 5% auto; // top and bottom | left and right
+padding: 1em auto 2em; // top | left and right | bottom
+padding: 2px 1em 0 auto; // top | right | bottom | left (clockwise)
+
+
+All of the above fully applies to block boxes. Some of the properties can apply to inline boxes too, such as those created by a <span> element. In the example below, we have a <span> inside a paragraph. We have applied a width, height, margin, border, and padding to it. You can see that the width and height are ignored. The top and bottom margin, padding, and border are respected but don't change the relationship of other content to our inline box. The padding and border overlap other words in the paragraph. The left and right padding, margins, and borders move other content away from the box.
+
+span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 50px;
+  background-color: lightblue;
+  border: 2px solid blue;
+}
+
+<p>
+  I am a paragraph and this is a <span>span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+</p>
+
+
+Using display: inline-block:
+display: inline-block is a special value of display, which provides a middle ground between inline and block. Use it if you do not want an item to break onto a new line, but do want it to respect width and height and avoid the overlapping seen above.
+
+For an element with display: inline-block, 
+- The width and height properties are respected.
+- padding, margin, and border will cause other elements to be pushed away from the box.
+- It does not, however, break onto a new line, and will only become larger than its content if you explicitly add width and height properties.
+
+Where this can be useful is when we want to give a link a larger hit area by adding padding. <a> is an inline element like <span>; we can use display: inline-block to allow padding to be set on it, making it easier for a user to click the link.
+
+
+Aspect-Ratio:

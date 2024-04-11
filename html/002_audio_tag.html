@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Tag</title>
+  </head>
+  <body>
+    <h1>Listen to this Song - Sang by Amit Das</h1>
+    <audio
+      src="./assets/Halka Halka Sa - Arijit Singh(MyMp3Song).mp3"
+      controls
+      loop
+      muted
+      autoplay
+      preload="auto"
+    ></audio>
+    <audio controls loop muted autoplay preload="auto">
+      <source
+        src="./assets/Halka Halka Sa - Arijit Singh(MyMp3Song).mp3"
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>
+
+<!-- The <audio> HTML element is used to embed sound content in documents. 
+    It may contain one or more audio sources, represented using the src attribute 
+    or the <source> element: the browser will choose the most suitable one. -->
+<!-- src: Specifies the URL of the audio file -->
+<!-- controls: Adds playback controls (play, pause, volume, etc.) to the audio -->
+<!-- loop: Loops the audio playback indefinitely -->
+<!-- autoplay: Automatically starts playing the audio when the page loads -->
+<!-- preload: Specifies whether the audio should be preloaded when the page loads -->
+<!-- muted: Mutes the audio of the audio -->

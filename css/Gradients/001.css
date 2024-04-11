@@ -1,0 +1,29 @@
+.container1 {
+  /* width: 400px; */
+  height: 400px;
+  border: 3px dotted red;
+  /* A linear gradient creates a band of colors that progress in a straight line. */
+  /* background: linear-gradient(blue, red); top to bottom, minimum two colors */
+  /* background: linear-gradient(blue, teal, red, yellow, black); multi-colors*/
+  /* background: linear-gradient(to bottom left, cyan, palegoldenrod); */
+  /* linear-gradient(direction, color1, color2, ...);
+     direction: It can be specified with keywords like, to top, to bottom(default), to right, to left, to top right, to top left, to bottom right, to bottom left or in degrees (eg., 0deg equivalent to `to bottom`, 90deg equivalent to `to right`, -90deg)
+     +ve deg --> Clockwise direction & -ve deg --> Anti-clockwise direction
+     The colors used in the gradient are called color stops.
+  */
+  /* We can specify a size for a color stop using percentage or absolute length values. */
+  /* background: linear-gradient(red 15%, orange 25%);  */
+  /* Equivalent to: linear-gradient(red 0% 15%, orange 25% 100%) 
+     Here, 0% to 15% red, 15% to 25% transition, 25% to 100% orange
+     It is a smooth transition.
+
+     background:  linear-gradient(red 30%, green 50%, blue 70%);
+     Red: From 0% to 30%, Transition from Red to Green: From 30% to 50%, Green: At 50%, Transition from Green to Blue: From 50% to 70%, Blue: From 70% to 100%
+
+     background:  linear-gradient(red 30%, green 50% 60%, blue 70%);
+     Red: From 0% to 30%, Transition from Red to Green: From 30% to 50%, Green: 50% to 60%, Transition from Green to Blue: From 60% to 70%, Blue: From 70% to 100%
+  */
+  background: linear-gradient(cyan 0% 25%, magenta 25% 50%, yellow 50%);
+  /* This is a hard transition. */
+  /* background: linear-gradient(red 150px, green 250px, blue); */
+}

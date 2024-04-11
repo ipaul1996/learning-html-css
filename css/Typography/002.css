@@ -1,0 +1,131 @@
+/* white-space, text-overflow, word-spacing, word-wrap, overflow-wrap, hyphens */
+
+#container1 {
+  width: 450px;
+  height: 250px;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+#container1 > p:nth-child(1) {
+  white-space: pre-wrap;
+  /* normal, nowrap, pre, pre-wrap, pre-line, break-spaces */
+  /* The white-space property in CSS controls how white space inside an element 
+  is handled. It's particularly useful for managing how spaces, tabs, and line 
+  breaks are displayed. 
+
+  normal: This is the default value. It collapses multiple spaces, tabs, and 
+  newlines into a single space and wraps text as necessary to fit within the container.
+
+  nowrap: This value prevents the text from wrapping to the next line. It continues 
+  on a single line, ignoring any line breaks or extra spaces.
+
+  pre: This value preserves white space and line breaks exactly as they are in the 
+  source code. Text is displayed in a fixed-width font, and each line is displayed as 
+  it appears in the HTML source.
+
+  pre-wrap: Similar to pre, but it allows text to wrap to the next line if necessary 
+  to fit within the container.
+
+  pre-line: It collapses multiple spaces, tabs, and newlines into a single space, 
+  but preserves line breaks. Text wraps to fit within the container as needed.
+  
+  */
+}
+
+#container2 {
+  width: 300px;
+  height: 250px;
+  border: 1px solid rebeccapurple;
+  padding: 10px;
+  margin: 10px;
+}
+
+#container2 > p:nth-child(1) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* clip, ellipsis, <string>  */
+  /* The text-overflow property in CSS controls how text is displayed when it 
+  overflows its containing element. This property is particularly useful when 
+  dealing with text that is too long to fit within its container. It works in 
+  conjunction with the overflow and white-space properties. For text-overflow 
+  to have an effect, the overflow property must be set to hidden, scroll, or auto, 
+  and the white-space property must be set to nowrap or pre.
+
+  clip: This is the default value. It simply clips the text at the edge of the 
+  container if it overflows, without any indication that the text has been cut off.
+
+  ellipsis: This value adds an ellipsis ("...") at the end of the text that overflows 
+  its container, indicating to the user that there is more text than what is currently 
+  visible.
+
+  <string>: This value allows you to specify a custom string to be displayed at the end 
+  of the text when it overflows. For example, text-overflow: " [more]"; would display 
+  "[more]" at the end of the overflowing text.
+
+  */
+}
+
+#container3 > p:nth-child(1) {
+  word-spacing: 15px;
+  /* The word-spacing property increases or decreases the white space between words. */
+  /* normal, <length> units */
+}
+
+#container4 {
+  width: 200px;
+  height: auto;
+  border: 1px solid green;
+}
+
+#container4 > p {
+  word-wrap: break-word;
+  /* normal, break-word */
+  /* The word-wrap property allows long words to be able to be broken and wrap 
+  onto the next line. */
+}
+
+#container5 {
+  width: 150px;
+  height: auto;
+  border: 1px solid blue;
+  padding: 2px;
+}
+
+#container5 > p {
+  overflow-wrap: break-word;
+  /* normal, break-word, anywhere */
+  /* 
+  normal(default): With overflow-wrap: normal, lines will only break at normal 
+  word break points, such as spaces or hyphens. If a single word is longer than 
+  the width of its container, it will overflow and extend beyond the container's 
+  boundaries.
+
+  break-word: When overflow-wrap is set to break-word, lines of text will break 
+  between any two characters if necessary, even if there are no spaces or hyphens 
+  present. This ensures that long words or strings, such as URLs, are broken at 
+  arbitrary points to prevent overflow. 
+  
+  */
+
+  hyphens: auto;
+  /* none, auto, manual */
+  /* 
+    The hyphens property in CSS is used to control the hyphenation of text when 
+    it wraps onto multiple lines. It allows you to specify whether or not words can 
+    be hyphenated to break across lines. 
+
+    none: This value disables hyphenation altogether. Words will not be hyphenated, 
+    even if they would otherwise overflow the container's boundaries.
+
+    manual: This value suggests that hyphenation should only occur where explicitly 
+    provided hyphenation hints are present in the text. 
+
+    auto: This value allows the browser to automatically hyphenate words when necessary 
+    to prevent overflow and improve the layout of text. The browser decides where to 
+    insert hyphens based on its internal algorithms and the language rules specified 
+    in the document.
+     
+  */ 
+}

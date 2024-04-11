@@ -1,0 +1,117 @@
+CSS Units for defining lengths and sizes:
+
+Absolute Length Units:
+    Absolute length units are based on an actual physical unit, and are generally considered 
+to be the same size across devices. However, depending on your screen size and quality, or 
+settings in your browser or OS, there may be some exceptions.
+
+Pixels (`px`):
+   - Formally, 1 pixel is defined as 1/96 of an inch. This means that the size of a pixel 
+     is based on the assumption that a monitor has a resolution of 1024 x 768 pixels and 
+     a DPI (dots per inch) of 96. However, modern devices have much higher resolutions and 
+     DPIs, so a line that's 96 pixels long may not actually measure exactly 1 inch on every device.
+   - Pixels provide a precise and absolute size.
+   - Example: `width: 100px;`, `font-size: 16px;`
+
+Other Absolute Length Units: cm(~37.8px), mm(~3.78px), in(~96px), pt[Points](1.3333px), pc[Picas](16px).
+
+********************************************************************************************************
+
+Relative Length Units:
+    Relative length units are relative to another element's size or settings. For example, 
+the relative font size of an element may be calculated using the parent element's font size.
+
+1. Ems (`em`):
+   - Ems are a relative unit of measurement.
+   - Historically the em unit was derived from the width of a capital "M" in a given typeface.
+   - an em unit is equal to the computed font-size for the element to which the em is applied. 
+     When em units are declared on child elements that don’t have a font-size defined, they will 
+     inherit their font-size from their parent, or from another ancestor element, possibly going 
+     all the way back to the root element on the document.
+
+    .container {
+      font-size: 16px;
+    }
+
+    .container p {
+      font-size: 1em;
+    }
+
+    .container h2 {
+      font-size: 3em;
+    }
+
+    p --> 16px, h2 --> 3 * 16 = 48px
+
+    .example {
+      font-size: 20px;
+      border-radius: .5em;
+      padding: 2em;
+    }
+
+    This border-radius value of .5em computes to 10px (i.e. 20*.5). 
+    The padding value of 2em is equal to 40px (20*2).
+
+
+2. Rems [Root em] (`rem`):
+   - Rems are similar to ems but are relative to the font size of the root element (`html`).
+   - They are not affected by nesting, providing consistency across the entire document.
+
+    p {
+      font-size: 1.25rem;
+    }
+In most browsers, the default font size is 16, so the font-size of html elements is 16px. 
+So in this case, p is 20px (16 * 1.25). But if a user changes their browser's default font size, 
+then the font-size of p will scale up or down accordingly.
+
+3. Percentages (`%`):
+   - Percentages are a relative unit of measurement.
+   - They specify a percentage of the parent element's size.
+    div {
+      width: 400px;
+    }
+
+    div p {
+      width: 75%;
+    }
+
+    Since the parent’s width is 400px, the width of the inner paragraph is be 300px (400 * .75).
+
+
+Viewport: The viewport is the visible portion of a web page that is displayed within the 
+browser window. It represents the area where the content of a web page is rendered 
+and where users interact with the page.
+
+4. Viewport Width (`vw`):
+   - Viewport width units are relative to the width of the viewport.
+   - 1vw is 1% of the width of the viewport.
+   - Viewport width units are useful for creating responsive designs that adapt to different screen widths.
+   - Example: `width: 50vw;`, `font-size: 5vw;`
+
+5. Viewport Height (`vh`):
+   - Viewport height units are similar to viewport width units but are based on the height of the viewport instead.
+   - 1vh is 1% of the height of the viewport.
+   - Viewport height units are useful for creating layouts that adapt to different screen heights.
+   - Example: `height: 75vh;`, `font-size: 3vh;`
+
+6. `vmin` and `vmax`:
+   - `1vmin` represents 1% of the smaller dimension of the viewport.
+   - If the viewport's width is smaller than its height, vmin is relative to the viewport's width. 
+     Conversely, if the viewport's height is smaller than its width, vmin is relative to the viewport's height.
+   - `1vmax` represents 1% of the larger dimension of the viewport.
+   - If the viewport's width is larger than its height, vmax is relative to the viewport's width. Conversely, if 
+     the viewport's height is larger than its width, vmax is relative to the viewport's height.
+
+7. ch:
+   - ch is a relative unit that scales based on the width of characters. 
+   - 1ch is equal to the width of the "0" character in the current font.
+
+    .container {
+      width: 30ch; /* Set the width of the container to 30 times the width of the "0" character */
+    } 
+
+    .text {
+      font-size: 1.2em; /* Increase the font size */
+      width: 20ch; /* Set the width of the text element to 20 times the width of the "0" character */
+    }
+

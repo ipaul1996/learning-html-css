@@ -1,0 +1,9 @@
+#container1 {
+  width: 550px;
+  height: 450px;
+  border: 15px dotted black;
+  padding: 30px;
+  background-image: url("https://images.unsplash.com/photo-1710170601723-54d0420b8773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8");
+  background-repeat: no-repeat;
+  
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Tag</title>
+  </head>
+  <body>
+    <h1>Learning Video Tag</h1>
+    <h2>Approach: 1</h2>
+    <video
+      src="./assets/Lonavala Property Teaser V3.mp4"
+      width="500px"
+      height="300px"
+      controls
+      autoplay
+      loop
+      muted
+      poster="./assets/preview_image.jpg"
+      preload="auto"
+    >
+      Unable to Load The Video...
+    </video>
+    <h2>Approach: 2</h2>
+    <video
+      width="500px"
+      height="300px"
+      controls
+      loop
+      muted
+      poster="./assets/preview_image.jpg"
+      preload="auto"
+    >
+      <source src="./assets/Lonavala Property Teaser V3.mp4" type="video/mp4" />
+      Unable to Load The Video...
+    </video>
+  </body>
+</html>
+
+<!-- src - Specifies the URL of the video file -->
+<!-- width - Sets the width of the video player -->
+<!-- height - Sets the height of the video player -->
+<!-- controls - Adds playback controls (play, pause, volume, etc.) to the video -->
+<!-- loop - Loops the video playback indefinitely -->
+<!-- muted - Mutes the audio of the video -->
+<!-- poster - Specifies the URL of an image to be displayed as the video poster -->
+<!-- preload - Specifies whether the video should be preloaded when the page loads -->
+<!-- The content inside the opening and closing <video></video> tags is shown as a fallback in browsers 
+     that don't support the element. -->
+<!-- Browsers don't all support the same video formats; you can provide multiple sources inside 
+     nested <source> elements, and the browser will then use the first one it understands. -->

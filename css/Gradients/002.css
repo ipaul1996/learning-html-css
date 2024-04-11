@@ -1,0 +1,38 @@
+.container1 {
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+  background: radial-gradient(red, yellow, green);
+  /*
+    The radial gradient defines a center, and color transition out from the center. It must
+    have at least two colors.
+
+    Syntax:
+    background: radial-gradient(shape size at position, start-color, ..., last-color);
+    By default, shape is ellipse, size is farthest-corner, and position is center.
+
+    shape(Optional) --> ellipse, circle
+
+    size(Optional) --> closest-side, farthest-side(default), closest-corner, farthest-corner or length values such as 10px or 50%.
+      closest-side --> The gradient will end at side closest to the center of the shape. If two sides match this criteria, then it will be evenly distributed.
+      farthest-side(default) --> The opposite of closest-side, where the gradient will end at the side farthest from the center of the shape.
+      closest-corner --> The gradient will end at the corner matches as the closest to the shape's center.
+      farthest-corner --> The opposite of closest-corner, where the gradient ends at the corner that is located furthest from the shape's center.
+
+    position(Optional) --> left, center, right, top, bottom, top left, top right, bottom left, bottom right, <length> values, <percentage> values
+
+    Examples:
+    background: radial-gradient(red, yellow, green);
+    background: radial-gradient(red 5%, yellow 15%, green 60%);
+    background: radial-gradient(circle, red, yellow, green);
+    background: radial-gradient(circle at 100% 40%, cyan 1%, magenta 1% 50%, yellow 50%);
+    Here, after at, first % is from left to right and second % is from top to bottom.
+    0% --> left, 100% --> right, 0% 0% --> top left corner, 100% 100% --> bottom right corner. Absolute length value works similarly.
+
+    background: radial-gradient(circle at top, cyan 1%, magenta 1% 50%, transparent);
+    background: radial-gradient(circle at top left, cyan 1%, magenta 1% 50%, transparent), radial-gradient(circle at bottom left, blue 10%, yellow 50%, transparent);
+    background: radial-gradient(circle closest-side, blue, red);
+
+    background:  repeating-radial-gradient(ellipse at 50% 50%, red 10%, blue 20%);
+   */
+}

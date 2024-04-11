@@ -1,0 +1,43 @@
+/* Styles for max-content */
+.max-content {
+  width: max-content;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Styles for min-content */
+.min-content {
+  width: min-content;
+  background-color: lightgreen;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Styles for fit-content */
+.fit-content-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.fit-content {
+  width: fit-content;
+  background-color: lightseagreen;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Styles for auto */
+.container {
+  width: 500px;
+  background-color: lightcoral;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.auto {
+  width: auto;
+  background-color: lightskyblue;
+  padding: 10px;
+  margin-bottom: 20px;
+}

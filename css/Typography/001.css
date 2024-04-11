@@ -1,0 +1,97 @@
+/* font, font-family, font-size, font-weight, font-style, font-variant, font-stretch, 
+line-height, letter-spacing, text-align, text-decoration, text-transform, text-shadow, */
+
+#div1 > p {
+  /* 
+    font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size]/[line-height] [font-family];
+    It is a shorthand property that allows you to set various font-related properties in a single declaration.
+  */
+  font-family: "Times New Roman", Times, serif;
+  /* A font family is a collection of fonts with different styles and weights, 
+  with each variation being a font.  */
+
+  font-size: 15px;
+  /* xx-small, x-small, small, medium, large, x-large, xx-large, xxx-large, smaller, larger, 
+  length units: (px, em, rem, ch, vw, vh, vmax, vmin), percentage */
+
+  font-weight: bold;
+  /* The font-weight CSS property sets the weight (or boldness) of the font. */
+  /* 100, 200, 300, 400, 500, 600, 700, 800, 900, bold(700), bolder, lighter, normal(400) */
+
+  font-style: italic;
+  /* The font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face */
+  /* normal, italic, oblique, oblique 40deg */
+
+  line-height: normal;
+  /* The line-height CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. */
+  /* normal, number[3.5(3.5 times the element's font size)], length units, percentage */
+
+  letter-spacing: normal;
+  /* The letter-spacing CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of letter-spacing causes characters to spread farther apart, while negative values of letter-spacing bring characters closer together. */
+  /* normal, length units */
+
+  text-align: justify-all;
+  /* The text-align CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. */
+  /* left, right, center, start, end, justify, justify-all (Same as justify, but also forces the last line to be justified.)*/
+
+  text-decoration: dotted;
+  /* The text-decoration shorthand CSS property sets the appearance of decorative lines on text. */
+  /* dashed, ditted, double, line-through, none, overline, solid, underline, wavy */
+  /*
+    Examples:
+    text-decoration: underline dotted;
+    text-decoration: underline dotted red;
+    text-decoration: green wavy underline;
+    text-decoration: underline overline #FF3028;
+  */
+
+  text-transform: capitalize;
+  /* It is used to specify how the text should be capitalized or transformed in terms of its case */
+  /* none, capitalize (convert first letter of each word to uppercase), uppercase, lowercase */
+}
+
+#div1 > h1 {
+  text-shadow: 15px 10px 2px rgba(0, 0, 0, 0.5);
+  /*
+    <color> --> Optional. The color of the shadow.
+
+    <offset-x> <offset-y> --> Required. These <length> values specify the shadow's distance from the text. <offset-x> specifies the horizontal distance; a negative value places the shadow to the left of the text. <offset-y> specifies the vertical distance; a negative value places the shadow above the text. If both values are 0, the shadow is placed directly behind the text, although it may be partly visible due to the effect of <blur-radius>.
+
+    <blur-radius> --> Optional. This is a <length> value. The higher the value, the bigger the blur; the shadow becomes wider and lighter. If not specified, it defaults to 0.
+
+    offset-x | offset-y | blur-radius | color 
+    text-shadow: 1px 1px 2px black;
+
+    color | offset-x | offset-y | blur-radius 
+    text-shadow: #fc0 1px 0 10px;
+
+    offset-x | offset-y | color 
+    text-shadow: 5px 5px #558abb;
+
+    color | offset-x | offset-y
+    text-shadow: white 2px 5px;
+
+    offset-x | offset-y --> Use defaults for color and blur-radius
+    text-shadow: 5px 10px;
+
+  */
+}
+
+button {
+  font-size: 14px;
+  padding: 1em; /* It is based on the font-size present in the button; */
+}
+
+#div2 > p:first-child {
+  font-variant: all-small-caps;
+  /* It is a property that allows you to specify variations in the appearance of text. It primarily deals with how the font's glyphs (characters) are displayed.  */
+  /* normal, 
+  small-caps (Renders lowercase letters as smaller versions of uppercase letters, maintaining the height of uppercase letters), 
+  all-small-caps(Renders all letters, including uppercase letters, as small capitals) */
+}
+
+#div2 > p:nth-child(2) {
+  font-stretch: 100%;
+  /*  It is used to specify the width of the characters in a font family. It allows you to control how condensed or expanded the characters appear horizontally, compared to the normal width of the font. */
+  /* normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded, (percentage - 50% to 200%) */
+}
