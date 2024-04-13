@@ -1,0 +1,10 @@
+Some inheritance properties, like color, are inherited from parent element if no value 
+is specified.
+
+Other properties are not inherited and instead have default intial values.
+
+If a css property does not inherited to the child element we can make it inherit by 
+specifing the following,
+p {
+  border: inherit;
+}

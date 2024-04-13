@@ -13,12 +13,14 @@
   /* 
       The color property is used to specify the text color of an element. 
       Colors are specified using,
-        1. predefined color names, 
-        2. RGB function(a color by its red, green, and blue components. Each component is expressed as an integer between 0 and 255), 
-        3. RGBA function(a color using red, green, blue, and an additional alpha channel representing the color's transparency. The alpha value is a number between 0 and 1, where 0 represents fully transparent and 1 represents fully opaque.), 
-        4. HEX(Hexadecimal Notation - It represents the intensity of red, green, and blue (RGB) components of the color. eg., #FF0000), 
+        1. predefined color names(named colors - 140+), 
+        2. RGB function(a color by its red, green, and blue channels. Each channel is expressed as an integer between 0 and 255), 
+        3. RGBA function(a color using red, green, blue, and an additional `alpha channel` representing the color's transparency. The alpha value is a number between 0 and 1, where 0 represents fully transparent and 1 represents fully opaque.), 
+        4. HEX(Hexadecimal Notation - It represents the intensity of red, green, and blue (RGB) components of the color. eg., #ff0000). Here first we have # then six characters, first two represents red channel from 0 to ff, second two represents green channel from 0 to ff and third two represents blue channel from 0 to ff. When each of the three pairs is same then we can reduce it to a single character i.e., #ffffff --> #fff
         5. HSL(hue, saturation, lightness - Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue. Saturation is a percentage value. 0% means a shade of gray, and 100% is the full color. Lightness is also a percentage. 0% is black, 50% is neither light or dark, 100% is white),  
         6. HSLA values(Similar to HSL values but with an additional alpha channel for transparency, using the hsla() function.). 
+
+      Always use color picker two write colors.
     */
 }
 

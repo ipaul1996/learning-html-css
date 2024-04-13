@@ -1,0 +1,73 @@
+Inline styles
+<p style="color:red;font-weight: bold;font-size: 24px;">Hello! Indrajit Paul.</p>
+
+**************************************************************************
+Internal styles:
+Here we use different selectors and combinators for targeting html
+elements. We do the styling inside the <style> tag.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Styles Example</title>
+    <style>
+        h1 {
+          color: blue;
+          font-size: 24px;
+        }
+        p {
+          background-color: yellow;
+          padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>This is a heading with internal styles</h1>
+    <p>This is a paragraph with internal styles.</p>
+
+</body>
+</html>
+
+
+
+**************************************************************************
+External styles:
+Here we use different selectors and combinators for targeting html
+elements. We do the styling in an external stylesheet and link(using link tag) 
+the stylesheet with the current html document. Single stylesheet can be linked to
+multiple html documents.
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Styles Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>This is a heading with external styles</h1>
+    <p>This is a paragraph with external styles.</p>
+
+</body>
+</html>
+
+
+
+styles.css
+
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+p {
+  background-color: yellow;
+  padding: 10px;
+}

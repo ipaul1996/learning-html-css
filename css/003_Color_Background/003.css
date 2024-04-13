@@ -1,0 +1,28 @@
+body {
+  background-color: yellow;
+}
+
+.container {
+  height: 550px;
+  width: 350px;
+  border: 1px solid red;
+  padding: 5px;
+  background-color: aqua;
+  opacity: 0.5;
+  /* <number> --> 0.0 to 1.0, <percentage> --> 0% to 100% 
+    Any value outside the interval, though valid, is clamped to 
+    the nearest limit in the range. */
+  /* The opacity CSS property sets the opacity of an element. Opacity is the degree 
+    to which content behind an element is hidden, and is the opposite of transparency. 
+    opacity applies to the element as a whole, including its contents, even though the 
+    value is not inherited by child elements. Thus, the element and its children all 
+    have the same opacity relative to the element's background, even if they have 
+    different opacities relative to one another.
+  */
+}
+
+h1 {
+  opacity: 0.8;
+  color: black;
+  background-color: red;
+}

@@ -7,8 +7,19 @@ line-height, letter-spacing, text-align, text-decoration, text-transform, text-s
     It is a shorthand property that allows you to set various font-related properties in a single declaration.
   */
   font-family: "Times New Roman", Times, serif;
-  /* A font family is a collection of fonts with different styles and weights, 
-  with each variation being a font.  */
+  /* The font-family CSS property specifies a prioritized list of one or more font 
+  family names and/or generic family names(separated by commas) for the selected element. 
+  Values are separated by commas to indicate that they are alternatives. The browser 
+  will select the first font in the list that is installed. We should always include 
+  at least one generic family name in a font-family list, since there's no guarantee 
+  that any given font is available. This lets the browser select an acceptable fallback 
+  font when necessary. The font-family property specifies a list of fonts, from highest 
+  priority to lowest. 
+  
+  font-family: "Gill Sans Extrabold", sans-serif; (A font family name and a generic family name)
+  font-family: serif; (A generic family name only)
+  
+  */
 
   font-size: 15px;
   /* xx-small, x-small, small, medium, large, x-large, xx-large, xxx-large, smaller, larger, 
