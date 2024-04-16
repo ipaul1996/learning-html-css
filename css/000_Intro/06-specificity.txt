@@ -1,0 +1,67 @@
+Specificity in CSS is a way of determining which CSS rule will be applied to an element when `multiple conflicting rules exist`. It's essentially a measure of how specific a selector is in targeting elements in the HTML document. Specificity is calculated based on the types of selectors used in CSS rules. In general, the more specific a selector is, the higher its specificity and the more precedence it has over less specific selectors.
+
+Inline Styles(1000 Points - Most Specific) > ID Selector(100 Points) > Class selectors, attribute selectors, and pseudo-classes(10 Points) > Type selectors and pseudo-elements(1 Point) > Universal selector(0 Point)
+
+
+Specificity Calculation:
+
+1st                  2nd                   3rd
+Position    Position(Class,           Position(Type,
+(ID)        Attribute, Pseudo-Class)  Pseudo-Elements
+--------    ------------------------  ---------------
+
+While calculating specificity we ignore all the combinators.
+
+Examples:
+
+.featured span {  /* Specificity --> (0, 1, 1) */
+
+}
+
+#special {  /* Specificity --> (1, 0, 0) */
+
+}
+
+.hello .main h1 {  /* Specificity --> (0, 2, 1) */
+
+}
+
+.main .feat .wide {  /* Specificity --> (0, 3, 0) */
+
+}
+
+div p.special {  /* Specificity --> (0, 1, 2) */
+
+}
+
+.special + .main {  /* Specificity --> (0, 2, 0) */
+
+}
+
+.main a:hover {  /* Specificity --> (0, 2, 1) */
+
+}
+
+a[href="https://www.google.com] {   /* Specificity --> (0, 1, 1) */
+
+}
+
+
+How to compare specificities?
+Let us assume, Specificity --> (A, B, C)
+1. Specificity Values: Calculate A, B, and C values for each selector.
+2. Compare A Values: Higher A value wins.
+3. If A Values Equal, Compare B Values: Higher B value wins.
+4. If A and B Values Equal, Compare C Values: Higher C value wins.
+5. If A, B, and C Values Equal, Consider Order: Selector later in stylesheet/HTML wins.
+
+Between (1, 0, 0) & (0, 1, 2), (1, 0, 0) WINS.
+Between (0, 2, 0) & (0, 2, 1), (0, 2, 1) WINS.
+
+Inline styles have the highest specificity. They override styles defined in external 
+stylesheets and styles in the <style> elements. This means that even if a selector 
+in an external stylesheet has a high specificity, an inline style applied directly 
+to the element will take precedence. 
+
+
+

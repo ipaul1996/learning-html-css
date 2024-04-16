@@ -1,0 +1,28 @@
+#my-list {
+  list-style-type: disc;
+  /* none, disc, circle, square, decimal, decimal-leading-zero, lower-roman, upper-roman, 
+  <string> --> Specified string will be used as item's marker, <custom-ident> --> An 
+  identifier matching the value of a @counter-style(refer mdn) or one of the 
+  predefined styles, "\1F44D" --> Emoji
+  
+  It is used to specify the appearance of the marker (such as a bullet or number) for 
+  list items in ordered and unordered lists. It allows you to customize the style of the 
+  marker to better fit the design of your webpage.
+  */
+
+  list-style-position: inside;
+  /* inside, outside */
+  /* It determines whether the marker of a list item should be inside or outside the 
+  principal block box of the list item. */
+
+  list-style-image: none;
+  /* none, url("starsolid.gif"), linear-gradient(to left bottom, red, blue); */
+  /* It is a CSS property sets an image to be used as the list item marker. */
+
+  /* 
+  list-style: url("img/shape.png") square inside;
+  The list-style CSS shorthand property allows you to set all the list style properties at once. 
+  The list-style property is specified as one, two, or three values in any order. If list-style-type 
+  and list-style-image are both set, the list-style-type is used as a fallback if the image is unavailable.
+  */
+}

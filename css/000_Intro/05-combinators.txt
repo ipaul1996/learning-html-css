@@ -1,0 +1,30 @@
+The CSS combinators allow us to combine multiple selectors to target specific elements in the DOM.
+
+Types of Combinators in CSS:
+
+The combinators are of 4 types, which are given below:
+1. `Descendant combinator ( ) (space)`
+2. `Child combinator (>)`
+3. `General sibling combinator (~)`
+4. `Adjacent sibling combinator (+)`
+
+Descendant combinator(represented by a single space (" ") character --> A B): Selects all 
+elements matched by B that are descendants of elements matched by A. It targets 
+elements that are nested within another element, regardless of how deep they are 
+nested. Selectors that utilize a descendant combinator are called descendant selectors.
+`div p` selects all <p> elements that are descendants of <div> elements.
+
+
+Child combinator (">" --> A > B): Selects all elements matched by B that are children of elements 
+matched by A. Descendant elements further down the hierarchy don't match.
+`div > p` selects all <p> elements that are direct children of <div> elements.
+
+
+General sibling combinator/Subsequent-sibling combinator ("~" --> A ~ B): Selects all elements matched 
+by B that are siblings of elements matched by A and appear after them.
+`h2 ~ p` selects all <p> elements that are siblings of <h2> elements and appear after them.
+
+
+Adjacent sibling combinator/Next-sibling combinator ("+" --> A + B): Selects the first element matched 
+by B that is immediately preceded by an element matched by A.
+`h2 + p` selects the first <p> element that comes immediately after an <h2> element.

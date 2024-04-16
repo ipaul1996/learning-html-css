@@ -32,3 +32,18 @@ _blank: Opens the linked document in a new browsing context or tab/window. This 
 _parent: The parent browsing context of the current one. If no parent, behaves as _self.
 _top: The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.
 -->
+
+<!-- 
+ # Symbol:
+ Internal Linking: When the hash symbol is followed by an id value within the same document, clicking on the anchor link will scroll the browser window to the location of the element with that id.
+
+<a href="#section2">Go to Section 2</a>
+
+Somewhere else in the document
+<h2 id="section2">Section 2</h2>
+
+Top of the Page: When the hash symbol is used alone (#) as the value of the href attribute, clicking on the anchor link will scroll the browser window to the top of the page.
+
+<a href="#">Back to Top</a>
+
+ -->

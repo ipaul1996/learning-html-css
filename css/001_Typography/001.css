@@ -3,7 +3,7 @@ line-height, letter-spacing, text-align, text-decoration, text-transform, text-s
 
 #div1 > p {
   /* 
-    font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size]/[line-height] [font-family];
+    font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size(Must)]/[line-height] [font-family(Must)];
     It is a shorthand property that allows you to set various font-related properties in a single declaration.
   */
   font-family: "Times New Roman", Times, serif;
@@ -18,6 +18,8 @@ line-height, letter-spacing, text-align, text-decoration, text-transform, text-s
   
   font-family: "Gill Sans Extrabold", sans-serif; (A font family name and a generic family name)
   font-family: serif; (A generic family name only)
+
+  We can also use Google fonts to use external fonts in our stylesheets.
   
   */
 
@@ -35,25 +37,33 @@ line-height, letter-spacing, text-align, text-decoration, text-transform, text-s
 
   line-height: normal;
   /* The line-height CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. */
-  /* normal, number[3.5(3.5 times the element's font size)], length units, percentage */
+  /* normal, number[3.5(3.5 times the element's current font size)], <length> units, <percentage> */
 
   letter-spacing: normal;
   /* The letter-spacing CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of letter-spacing causes characters to spread farther apart, while negative values of letter-spacing bring characters closer together. */
-  /* normal, length units */
+  /* normal, <length> units */
 
   text-align: justify-all;
   /* The text-align CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. */
   /* left, right, center, start, end, justify, justify-all (Same as justify, but also forces the last line to be justified.)*/
 
-  text-decoration: dotted;
-  /* The text-decoration shorthand CSS property sets the appearance of decorative lines on text. */
-  /* dashed, ditted, double, line-through, none, overline, solid, underline, wavy */
-  /*
-    Examples:
-    text-decoration: underline dotted;
-    text-decoration: underline dotted red;
-    text-decoration: green wavy underline;
-    text-decoration: underline overline #FF3028;
+  text-decoration: green wavy underline 2px;
+  /* The text-decoration shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style, and the newer text-decoration-thickness property. 
+
+  text-decoration-line --> none, underline, overline, line-through (We can use single keyword as well as multiple keywords together separated by commas)
+
+  text-decoration-style --> solid, double, dotted, dashed, wavy
+  (It sets the style of the lines specified by text-decoration-line)
+
+  text-decoration-thickness --> auto(Browser decides), from-font(If the font file includes information about a preferred thickness, use that value. If the font file doesn't include this information, behave as if auto was set), <length> values, <percentage>
+
+  Examples:
+  text-decoration: underline dotted;
+  text-decoration: underline dotted red;
+  text-decoration: green wavy underline;
+  text-decoration: underline overline #FF3028;
+  (Order of values does not matter)
+  
   */
 
   text-transform: capitalize;
@@ -85,6 +95,8 @@ line-height, letter-spacing, text-align, text-decoration, text-transform, text-s
     offset-x | offset-y --> Use defaults for color and blur-radius
     text-shadow: 5px 10px;
 
+    text-shadow: -2px 2px 2px magenta, -4px 4px 1px cyan;
+
   */
 }
 
@@ -106,3 +118,4 @@ button {
   /*  It is used to specify the width of the characters in a font family. It allows you to control how condensed or expanded the characters appear horizontally, compared to the normal width of the font. */
   /* normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded, (percentage - 50% to 200%) */
 }
+

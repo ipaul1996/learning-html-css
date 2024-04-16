@@ -1,0 +1,29 @@
+.container {
+  width: 400px;
+  height: 300px;
+  border: 1px solid;
+  box-shadow: 2px 2px 12px 10px rgb(0 235 121);
+  /* It adds shadow effects around an element's frame. You can set multiple effects 
+  separated by commas. A box shadow is described by X and Y offsets relative to the 
+  element, blur and spread radius, and color.
+
+  box-shadow: red 60px -16px; <color> | <offset-X> | <offset-Y>
+  box-shadow: 10px 5px 5px black; <offset-X> | <offset-Y> | <blur-radius> | <color>
+  box-shadow: 2px 2px 2px 1px rgb(0 235 121); <offset-X> | <offset-Y> | <blur-radius> | <spread-radius> | <color>
+  box-shadow: 3px 3px red, -1em 0 .4em olive;
+
+  <color> --> Optional
+  <offset-x> --> (horizontal offset)
+  <offset-y> --> (vertical offset)
+  Negative <offset-x> value places the shadow to the left of the element. 
+  Negative <offset-y> value places the shadow above the element.
+
+  If not specified, the value of 0 is used for the missing length. If both <offset-x> and <offset-y> are set to 0, the shadow is placed behind the element (and may generate a blur effect if <blur-radius> and/or <spread-radius> is set).
+
+  <blur-radius> --> The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be set to 0 (meaning that the shadow's edge will be sharp).
+
+  <spread-radius> --> Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink. If not specified, it will be set to 0 (that is, the shadow will be the same size as the element).
+
+
+  */
+}

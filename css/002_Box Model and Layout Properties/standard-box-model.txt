@@ -40,8 +40,12 @@ Padding box: The padding sits around the content as white space; size it using p
 Border box: The border box wraps the content and any padding; size it using border and related properties.
 Margin box: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements; size it using margin and related properties.
 
+Types of Box Models in CSS:
+There are two kinds of box models in CSS, the standard and alternate model.
+
 The standard CSS box model:-
-If you set width and height property values on a box, these values define width and height of the content box. Any padding and borders are then added to those dimensions to get the total size taken up by the box.
+If you set width and height property values on a box, these values define width and height of the content box. Any padding and borders are then added to those dimensions to get the total size taken up by the box. It is implemented by, (box-sizing: content-box)
+
 
 .box {
   width: 350px;
@@ -53,6 +57,8 @@ If you set width and height property values on a box, these values define width 
 
 Here, the actual space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).
 Point to be noted that the margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
+
+------------------------------------------------------------------------------------------------------------
 
 Width:
 The width property sets the width of an element. By default, it sets the width of the content area i.e., the width of an element does not include padding, borders, or margins!
@@ -70,7 +76,7 @@ The specified value of width applies to the content area so long as its value re
 - If the value for width is less than the value for min-width, then min-width overrides width.
 - If the value for width is greater than the value for max-width, then max-width overrides width.
 
-
+------------------------------------------------------------------------------------------------------------
 
 Height:
 The height property sets the height of an element. By default, the property defines the height of the content area i.e., of an element does not include padding, borders, or margins!
@@ -88,12 +94,14 @@ The min-height CSS property sets the minimum height of an element. It prevents t
 max-height overrides height, but min-height overrides max-height.
 values: <length> values, <percentage> value, max-content, min-content, fit-content, auto
 
-
+------------------------------------------------------------------------------------------------------------
 
 Margin:
 The margin is an invisible space around your box. It pushes other elements away from the box. Margins can have positive or negative values. Setting a negative margin on one side of your box can cause it to overlap other things on the page. Whether you are using the standard or alternative box model, the margin is always added after the size of the visible box has been calculated.
 CSS properties: margin, margin-top, margin-right, margin-bottom, margin-left
 Values: <length>, <percentage>, auto(browser selects a suitable margin to use. For example, in certain cases this value can be used to center an element)
+Point to be noted here that text-align: center; centers the content whereas margin: auto;
+centers the entire element inside the parent container horizontally.
 
 margin: 5px; // Apply to all sides of the box
 margin: 5% auto; // top and bottom | left and right
@@ -106,12 +114,37 @@ Depending on whether two elements whose margins touch have positive or negative 
 - If one margin is negative, its value will be subtracted from the total.
 (Note that the margins of floating and absolutely positioned elements never collapse)
 
-
+------------------------------------------------------------------------------------------------------------
 
 Borders:
 The border is drawn between the margin and the padding of a box. If you are using the standard box model, the size of the border is added to the width and height of the content box.
 For styling borders, there are a large number of properties — there are four borders, and each border has a style, width, and color that we might want to manipulate.
-CSS properties: border[width style color --> 1px solid red], border-top, border-right, border-bottom, border-left, border-width, border-style, border-color, border-top-width, border-top-style, border-top-color, border-right-width, border-right-style, border-right-color, border-bottom-width, border-bottom-style, border-bottom-color, border-left-width, border-left-style, border-left-color
+CSS properties: border: [width style color --> 1px solid red]
+We can also give borders individually to all the diiferent sides using border-top, border-right, 
+border-bottom, border-left. 
+border is a shorthand property of border-width, border-style, and border-color.
+
+border-width: thin/medium/thick/<length> values; (Applied to all the four sides)
+border-width: 2px 1.5em; /* top and bottom | left and right */
+border-width: 1px 2em 1.5cm; /* top | left and right | bottom */
+border-width: 1px 2em 0 4rem; /* top | right | bottom | left */
+(border-top-width, border-right-width, border-bottom-width, border-left-width)
+
+
+border-style: none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset; (Applied to all the four sides)
+border-style: dotted solid; /* top and bottom | left and right */
+border-style: hidden double dashed;  /* top | left and right | bottom */
+border-style: none solid dotted dashed;  /* top | right | bottom | left */
+(border-top-style, border-right-style, border-bottom-style, border-left-style)
+
+
+border-color: red; (Applied to all the four sides)
+border-color: red #f015ca;  /* top and bottom | left and right */
+border-color: red rgb(240 30 50 / 70%) green;  /* top | left and right | bottom */
+border-color: red yellow green blue; /* top | right | bottom | left */
+(border-top-color, border-right-color, border-bottom-color, border-left-color)
+
+------------------------------------------------------------------------------------------------------------
 
 Border-radius:
 The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. The radius applies to the whole background, even if the element has no border;
@@ -121,8 +154,9 @@ border-radius: 10px; /* Radius is set for all 4 sides */
 border-radius: 10px 5%; /* top-left-and-bottom-right | top-right-and-bottom-left */
 border-radius: 2px 4px 2px; /* top-left | top-right-and-bottom-left | bottom-right */
 border-radius: 1px 0 3px 4px; /* top-left | top-right | bottom-right | bottom-left */
+(border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius)
 
-
+------------------------------------------------------------------------------------------------------------
 
 
 Padding:
@@ -151,9 +185,12 @@ span {
   I am a paragraph and this is a <span>span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
 </p>
 
+------------------------------------------------------------------------------------------------------------
 
-Using display: inline-block:
-display: inline-block is a special value of display, which provides a middle ground between inline and block. Use it if you do not want an item to break onto a new line, but do want it to respect width and height and avoid the overlapping seen above.
+
+display: inline-block:-
+
+display: inline-block; is a special value of display, which provides a middle ground between inline and block. Use it if you do not want an item to break onto a new line, but do want it to respect width and height and avoid the overlapping seen above.
 
 For an element with display: inline-block, 
 - The width and height properties are respected.
@@ -163,4 +200,18 @@ For an element with display: inline-block,
 Where this can be useful is when we want to give a link a larger hit area by adding padding. <a> is an inline element like <span>; we can use display: inline-block to allow padding to be set on it, making it easier for a user to click the link.
 
 
-Aspect-Ratio:
+------------------------------------------------------------------------------------------------------------
+
+display: none:-
+
+The display: none; property in CSS is a way to completely hide an element from the webpage. 
+When applied to an element, it removes it from the document flow, meaning it doesn't take 
+up any space on the page as if it were never there. When we apply display: none; to a 
+parent element, all of its child elements are also hidden, regardless of their individual 
+display properties. While display: none; effectively hides elements, it doesn't remove them 
+from the DOM.  Elements with display: none; cannot be interacted with. They are effectively 
+"disabled" and cannot be clicked on, hovered over, or selected by the user.
+
+
+------------------------------------------------------------------------------------------------------------
+

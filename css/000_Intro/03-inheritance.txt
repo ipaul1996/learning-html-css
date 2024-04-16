@@ -1,7 +1,8 @@
 Some inheritance properties, like color, are inherited from parent element if no value 
-is specified.
+is specified. For example, color, font-family, font-size, font-weight, line-height etc.
 
-Other properties are not inherited and instead have default intial values.
+Other properties are not inherited and instead have default intial values. For example,
+border, margin, padding, background-color, text-align etc.
 
 If a css property does not inherited to the child element we can make it inherit by 
 specifing the following,

@@ -1,0 +1,28 @@
+The alternate CSS box model:-
+In this model the width and height of an element include the padding and 
+border. This means that the specified width and height of the element 
+include the padding and border, and the content area is adjusted to fit within 
+those dimensions. It is implemented with box-sizing: border-box.
+
+Specifying Dimensions: When we set the width and height of an element using the alternate box model, 
+we're specifying the total outer dimensions of the box, including padding and borders.
+
+Content Sizing: The content area of the element is adjusted to fit within the specified 
+width and height, accounting for any padding and borders. This means that the content area 
+may be smaller than the specified width and height if padding and borders are present.
+
+Padding and Border Widths: Padding and border widths are included in the specified width 
+and height of the element. This ensures that the total outer dimensions of the box remain 
+consistent, regardless of padding and border widths.
+
+.box {
+  box-sizing: border-box;
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+content box width = 350px - (2 * 25px) - (2 * 5px) = 290px;
+content box height = 150px - (2 * 25px) - (2 * 5px) = 90px;

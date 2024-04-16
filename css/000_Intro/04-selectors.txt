@@ -1,0 +1,710 @@
+What is a selector?
+A CSS selector is the first part of a CSS Rule. It is a pattern of elements and 
+other terms that tell the browser which HTML elements should be selected to have 
+the CSS property values inside the rule applied to them. The element or elements 
+which are selected by the selector are referred to as the subject of the selector.
+
+*************************************************************************************
+
+Type/Tag/Element Selector(Specificity - 1):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Type selectors target an HTML element such as an <h1>,
+h1 {
+  color: blue;
+}
+
+*************************************************************************************
+
+ID Selector(Specificity - 100):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The id selector styles the element with the specified id. It is declared using a hash, 
+or pound symbol (#) preceding a string of characters. Id assigned to an html element 
+should be unique throughout the html document.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Selector Example</title>
+    <style>
+        #myDiv {
+            background-color: lightblue;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        This is a div with the ID "myDiv".
+    </div>
+</body>
+</html>
+
+*************************************************************************************
+Class Selector(Specificity - 10):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The class selector in CSS is used to target HTML elements based on the value of their 
+class attribute. Unlike IDs, which must be unique within a document, classes can be 
+applied to multiple elements, allowing us to style several elements in a similar way.
+Different types of element can have same class, and multiple classes can be added to 
+a single element by separating them with spaces.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selector Example</title>
+    <style>
+        .highlight {
+            color: blue;
+            background-color: magenta;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="highlight">This is a highlighted heading</h1>
+    <p>This is not highlighted.</p>
+    <p class="highlight underline">This is another highlighted paragraph.</p>
+</body>
+</html>
+
+
+
+*************************************************************************************
+Universal Selector(Specificity - 0):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The universal selector (*) in CSS is used to target all elements in a document. 
+It matches every single element type available in the HTML. 
+* {
+    margin: 0;
+    padding: 0;
+}
+The above is different than,
+body {
+   margin: 0;
+   padding: 0;
+}
+It is only applied to the body. All the css properties that can be inherited are 
+applied to all the child elements. 
+
+*************************************************************************************
+Group Selector:
+~~~~~~~~~~~~~~~
+
+A group selector in CSS allows you to apply the same style rules to multiple selectors 
+by grouping them together. This can help you avoid redundancy and make our CSS code 
+more concise. 
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+.btn-primary, .btn-secondary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+}
+
+
+
+*************************************************************************************
+Attribute Selector:
+~~~~~~~~~~~~~~~~~~~
+The [attribute] selector is used to select elements with a specified attribute. 
+
+Syntax:
+1. [attr]
+   Represents elements with an attribute name of attr.
+
+a[title] {
+  color: purple;
+}
+
+a[target] {
+    color: red;
+}
+
+2. [attr=value]
+   Represents elements with an attribute name of attr whose value is exactly value.
+
+a[href="https://example.org"]
+{
+  color: green;
+}
+
+<input type="text">
+<input type="email"> (selects this one)
+
+input[type="email"] {
+
+}
+
+3.  [attr~=value]
+    Represents elements with an attribute name of attr whose value is a whitespace-separated 
+    list of words, one of which is exactly value.
+
+a[class~="logo"] {  /* <a> elements whose class attribute contains the word "logo" */
+  padding: 2px;
+}
+
+4. [attr|=value]
+   Represents elements with an attribute name of attr whose value can be exactly value 
+   or can begin with value immediately followed by a hyphen, - (U+002D). It is often used 
+   for language subcode matches.
+
+<p lang="en">English text</p>
+<p lang="en-US">English text with US subcode</p>
+<p lang="fr">French text</p>
+
+p[lang|="en"] {
+    color: blue;
+}
+/* select elements with the lang attribute whose value is either exactly "en" 
+or starts with "en-". */
+
+
+5. [attr^=value]
+   Represents elements with an attribute name of attr whose value is prefixed (preceded) 
+   by value.
+
+a[href^="#"] {            /* Internal links, beginning with "#" */ 
+  background-color: gold;
+}
+
+6. [attr$=value]
+   Represents elements with an attribute name of attr whose value is suffixed (followed) 
+   by value.
+
+<a href="https://example.com">Link 1</a>
+<a href="https://example.net">Link 2</a>
+<a href="https://example.org">Link 3</a>
+
+a[href$=".org"] {
+  color: green;
+}
+
+
+7. [attr*=value]
+   Represents elements with an attribute name of attr whose value contains at least one 
+   occurrence of value within the string.
+
+a[href*="example"] {       /* Links with "example" anywhere in the URL */
+  background-color: silver;
+}
+
+*************************************************************************************
+Compound Selector:
+~~~~~~~~~~~~~~~~~~
+A compound selector is a sequence of simple selectors that are not separated by a combinator, 
+and represents a set of simultaneous conditions on a single element.
+
+We can combine class, id and element selectors(without any combinator in between).
+
+div.special { /* It selects divs that have the class special */
+
+}
+
+h2.score { /* It selects h2 elements that have the class score */
+
+}
+
+.score.big {  /* It selects elements that have the class score as well as the big */
+
+}
+
+
+*************************************************************************************
+Pseudo Classes:
+~~~~~~~~~~~~~~~
+A pseudo-class in CSS is a keyword that is added to a selector to define a special state 
+of the selected element(s). They typically represent a specific state or condition of an 
+element, such as its interaction state (e.g., hover, active), position within a container,
+or the presence of certain attributes. Pseudo-classes are preceded by a colon (:) and are 
+added to the end of a selector.
+
+-----------------------------------------------------------------------------------
+
+:hover: Applies styles when an element is being hovered over by the mouse pointer.
+
+
+-----------------------------------------------------------------------------------
+
+:active: Applies styles to an element when it is being activated by the user. When 
+using a mouse, "activation" typically starts when the user presses down the primary 
+mouse button.
+
+index.html
+<p>Would you like to subscribe to our channel?</p>
+<button class="joinBtn">Subscribe</button>
+
+styles.css
+.joinBtn {
+  width: 10em;
+  height: 5ex;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.joinBtn:active {
+  box-shadow: 2px 2px 5px #fc894d;
+}
+
+-----------------------------------------------------------------------------------
+
+:focus: It represents an element (such as a form input) that has received focus. It 
+is generally triggered when the user clicks or taps on an element or selects it with 
+the keyboard's Tab key.
+
+index.html
+<form>
+  <p>Which flavor would you like to order?</p>
+  <label>Full Name: <input name="firstName" type="text" /></label>
+  <label
+    >Flavor:
+    <select name="flavor">
+      <option>Cherry</option>
+      <option>Green Tea</option>
+      <option>Moose Tracks</option>
+      <option>Mint Chip</option>
+    </select>
+  </label>
+</form>
+
+styles.css
+
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:focus {
+  background-color: lightblue;
+}
+
+select:focus {
+  background-color: ivory;
+}
+
+-----------------------------------------------------------------------------------
+
+:visited: Applies styles to links that have been visited by the user.
+
+index.html
+<p>Pages that you might have visited:</p>
+<ul>
+  <li>
+    <a href="https://developer.mozilla.org">MDN Web Docs</a>
+  </li>
+  <li>
+    <a href="https://www.youtube.com/">YouTube</a>
+  </li>
+</ul>
+<p>Pages unlikely to be in your history:</p>
+<ul>
+  <li>
+    <a href="https://developer.mozilla.org/missing-1">Random MDN page</a>
+  </li>
+  <li>
+    <a href="https://example.com/missing-1">Random Example page</a>
+  </li>
+</ul>
+
+
+styles.css
+p {
+  font-weight: bold;
+}
+
+a:visited {
+  color: forestgreen;
+  text-decoration-color: hotpink;
+}
+
+-----------------------------------------------------------------------------------
+
+:first-child: Selects the first child element of its parent.
+
+index.html
+<p>Track & field champions:</p>
+<ul>
+  <li>Adhemar da Silva</li>
+  <li>Wang Junxia</li>
+  <li>Wilma Rudolph</li>
+  <li>Babe Didrikson-Zaharias</li>
+  <li>Betty Cuthbert</li>
+  <li>Fanny Blankers-Koen</li>
+  <li>Florence Griffith-Joyner</li>
+  <li>Irena Szewinska</li>
+  <li>Jackie Joyner-Kersee</li>
+  <li>Shirley Strickland</li>
+  <li>Carl Lewis</li>
+  <li>Emil Zatopek</li>
+  <li>Haile Gebrselassie</li>
+  <li>Jesse Owens</li>
+  <li>Jim Thorpe</li>
+  <li>Paavo Nurmi</li>
+  <li>Sergei Bubka</li>
+  <li>Usain Bolt</li>
+</ul>
+
+styles.css
+p {
+  font-weight: bold;
+}
+
+li:first-child {
+  border: 2px solid orange;
+}
+    
+-----------------------------------------------------------------------------------
+
+:last-child: Selects the last child element of its parent.
+
+-----------------------------------------------------------------------------------
+
+:nth-child(): Selects elements based on their position within a parent element.  
+Element indices are 1-based. We can specify a formula to match elements 
+(e.g., `:nth-child(odd)`, :nth-child(even) `:nth-child(3n+1) --> n is all nonnegative 
+integers, starting from 0`, :nth-child(5n), :nth-child(-n+3), :nth-child(7)).
+
+-----------------------------------------------------------------------------------
+
+:checked: The :checked CSS pseudo-class selector represents any radio (<input type="radio">), 
+checkbox (<input type="checkbox">), or option (<option> in a <select>) element that is 
+checked or toggled to an on state.
+
+index.html
+<form>
+  <p>How did you find out about us?</p>
+  <label><input name="origin" type="radio" value="google" checked /> Google</label>
+  <label><input name="origin" type="radio" value="facebook" /> Facebook</label>
+  <p>Please agree to our terms:</p>
+
+  <label><input name="newsletter" type="checkbox" checked /> I want to subscribe to a personalized newsletter.</label>
+
+  <label><input name="privacy" type="checkbox" /> I have read and I agree to the Privacy Policy.</label>
+
+  <input type="submit" value="Submit form" />
+</form>
+
+
+styles.css
+label,
+input[type='submit'] {
+  display: block;
+  margin-top: 1em;
+}
+
+input:checked {
+  border: none;
+  outline: 2px solid deeppink;
+}
+
+-----------------------------------------------------------------------------------
+
+:disabled: The :disabled CSS pseudo-class represents any disabled element. An element 
+is disabled if it can't be activated (selected, clicked on, typed into, etc.) or accept 
+focus. The element also has an enabled state, in which it can be activated or accept focus.
+
+index.html
+<form>
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" />
+
+  <label for="emp">Employed:</label>
+  <select id="emp" name="emp" disabled>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label for="empDate">Employment Date:</label>
+  <input id="empDate" name="empDate" type="date" disabled />
+
+  <label for="resume">Resume:</label>
+  <input id="resume" name="resume" type="file" />
+</form>
+
+
+styles.css
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+*:disabled {
+  background-color: green;
+  color: linen;
+  opacity: 1;
+}
+-----------------------------------------------------------------------------------
+
+:enabled: The :enabled CSS pseudo-class represents any enabled element. An element 
+is enabled if it can be activated (selected, clicked on, typed into, etc.) or accept focus.
+The element also has a disabled state, in which it can't be activated or accept focus.
+
+index.html
+<form>
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" />
+
+  <label for="emp">Employed:</label>
+  <select id="emp" name="emp" disabled>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label for="empDate">Employment Date:</label>
+  <input id="empDate" name="empDate" type="date" disabled />
+
+  <label for="resume">Resume:</label>
+  <input id="resume" name="resume" type="file" />
+</form>
+
+styles.css
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+*:enabled {
+  background-color: gold;
+}
+
+-----------------------------------------------------------------------------------
+:placeholder-shown: It represents any <input> or <textarea> element that is currently 
+displaying placeholder text.
+
+<form>
+  <label for="name">Full Name:</label>
+  <input id="name" name="name" type="text" />
+
+  <label for="email">Email Address:</label>
+  <input id="email" name="email" type="email" placeholder="name@example.com" />
+
+  <label for="age">Your age:</label>
+  <input id="age" name="age" type="number" value="18" placeholder="You must be 18+" />
+</form>
+
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:placeholder-shown {
+  background-color: ivory;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+}
+
+----------------------------------------------------------------------------------
+:first-of-type: It is used to select the first element of its type among its siblings. 
+This means it targets the first occurrence of a specific element type within its parent 
+container.
+
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+
+li:first-of-type {
+  font-weight: bold;
+}
+In this case, the first list item ("First item") will be styled with bold font weight.
+
+-----------------------------------------------------------------------------------
+:last-of-type:  It selects the last element of its type among its siblings within 
+its parent container.
+
+<div class="container">
+  <p>First paragraph</p>
+  <div>Another div</div>
+  <p>Second paragraph</p>
+</div>
+
+
+p:last-of-type {
+  color: red;
+}
+
+In this case, the :last-of-type pseudo-class will select the last <p> element within 
+the .container div, which is "Second paragraph". Just like :first-of-type, it looks 
+at the element type (<p> in this case) and selects the last occurrence of that type 
+within its parent container.
+
+-----------------------------------------------------------------------------
+:not(): It represents elements that do not match a list of selectors. Since it prevents 
+specific items from being selected, it is known as the negation pseudo-class.
+
+<p>I am a paragraph.</p>
+<p class="fancy">I am so very fancy!</p>
+<div>I am NOT a paragraph.</div>
+<h2>
+  <span class="foo">foo inside h2</span>
+  <span class="bar">bar inside h2</span>
+</h2>
+
+
+.fancy {
+  text-shadow: 2px 2px 3px gold;
+}
+
+/* <p> elements that don't have a class `.fancy` */
+p:not(.fancy) {
+  color: green;
+}
+
+/* Elements that are not <p> elements */
+body :not(p) {
+  text-decoration: underline;
+}
+
+/* Elements that are not <div>s or `.fancy` */
+body :not(div):not(.fancy) {
+  font-weight: bold;
+}
+
+/* Elements that are not <div>s or `.fancy` */
+body :not(div, .fancy) {
+  text-decoration: overline underline;
+}
+
+/* Elements inside an <h2> that aren't a <span> with a class of `.foo` */
+h2 :not(span.foo) {
+  color: red;
+}
+
+
+*************************************************************************************
+
+Pseudo Elements:
+~~~~~~~~~~~~~~~~
+Pseudo-elements in CSS are special keywords that allow you to style certain parts of 
+an element's content or layout that do not correspond to actual HTML elements. They 
+provide a way to target and style parts of an element's content or structure that are 
+not represented by HTML markup alone.
+Pseudo-elements are denoted by double colons (::) in CSS syntax. They are used to create 
+virtual elements that can be styled independently from the actual content of the document.
+
+------------------------------------------------------------------------------------------------
+::before: 
+
+
+
+
+------------------------------------------------------------------------------------------------
+::after:
+
+--------------------------------------------------------------------------------------------------------
+::first-line: It applies styles to the first line of a block container. The effects of ::first-line 
+are limited by the length and content of the first line of text in the element. The length of the first 
+line depends on many factors, including the width of the element, the width of the document, and the font 
+size of the text.
+
+Allowable properties => font, font-family, font-style, font-stretch, font-variant, font-weight, 
+font-size, line-height, text-decoration, text-shadow, text-transform, letter-spacing, 
+word-spacing (when appropriate), text-decoration, text-decoration-color, text-decoration-line, text-decoration-style, text-shadow, color, background, background-color, background-image, background-clip, 
+background-origin, background-position, background-repeat, background-size, background-attachment.
+
+<p>
+  In warm ocean waters around the world, you may see a strange sight: A fish leaping from the water and 
+  soaring dozens of meters before returning to the ocean's depths. Early Mediterranean sailors thought 
+  these flying fish returned to the shore at night to sleep, and therefore called this family of marine 
+  fish Exocoetidae.
+</p>
+
+p::first-line {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+------------------------------------------------------------------------------------------------
+
+
+::first-letter: It applies styles to the first letter of the first line of a block container, 
+but only when not preceded by other content (such as images or inline tables). Punctuation that 
+precedes or immediately follows the first letter is included in the match.
+
+Allowable properties => font, font-family, font-style, font-stretch, font-variant, font-weight, 
+font-size, line-height, text-decoration, text-shadow, text-transform, letter-spacing, 
+word-spacing (when appropriate), text-decoration, text-decoration-color, text-decoration-line, 
+text-decoration-style, box-shadow, float, color, background, background-color, background-image, 
+background-clip, background-origin, background-position, background-repeat, background-size, 
+background-attachment, margin, margin-top, margin-right, margin-bottom, margin-left, padding, 
+padding-top, padding-right, padding-bottom, padding-left, border, border-style, border-color, 
+border-width, border-radius. 
+
+
+<p>
+  Scientists exploring the depths of Monterey Bay unexpectedly encountered a rare and unique 
+  species of dragonfish. This species is the rarest of its species.
+</p>
+<p>When Robison and a team of researchers discovered this fish, they were aboard a week-long 
+expedition.</p>
+
+p::first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: brown;
+}
+
+
+------------------------------------------------------------------------------------------------
+::placeholder: It represents the placeholder text in an <input> or <textarea> element.
+Only the subset of CSS properties that apply to the ::first-line pseudo-element can be 
+used in a rule using ::placeholder in its selector.
+
+<label for="first-name">Your phone number:</label>
+<br />
+<input id="first-name" type="tel" name="phone" minlength="9" maxlength="9" placeholder="It must be 9 digits" />
+
+input {
+  margin-top: 0.5rem;
+}
+
+input::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: red;
+}
+
+------------------------------------------------------------------------------------------------
+
+::selection: It applies styles to the part of a document that has been highlighted by the user 
+(such as clicking and dragging the mouse across text).
+Allowable properties => color, background-color, text-decoration and its associated properties,
+text-shadow
+
+<p>Select a fragment of this paragraph, to see how its appearance is affected.</p>
+
+p::selection {
+  color: red;
+  background-color: yellow;
+}
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
