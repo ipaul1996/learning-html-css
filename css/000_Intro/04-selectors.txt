@@ -1,6 +1,6 @@
 What is a selector?
 A CSS selector is the first part of a CSS Rule. It is a pattern of elements and 
-other terms that tell the browser which HTML elements should be selected to have 
+other terms that tells the browser which HTML elements should be selected to have 
 the CSS property values inside the rule applied to them. The element or elements 
 which are selected by the selector are referred to as the subject of the selector.
 
@@ -102,7 +102,7 @@ applied to all the child elements.
 Group Selector:
 ~~~~~~~~~~~~~~~
 
-A group selector in CSS allows you to apply the same style rules to multiple selectors 
+A group selector in CSS allows us to apply the same style rules to multiple selectors 
 by grouping them together. This can help you avoid redundancy and make our CSS code 
 more concise. 
 

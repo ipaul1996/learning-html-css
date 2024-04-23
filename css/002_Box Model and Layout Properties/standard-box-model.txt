@@ -1,3 +1,10 @@
+/* width, height, max-width, min-width, max-height, min-height, 
+padding, padding-top, padding-right, padding-bottom, padding-left,
+border, border-width, border-style, border-color, border-radius,
+margin, margin-top, margin-right, margin-bottom, margin-left, display, box-sizing */
+
+
+
 Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items.
 In CSS we have two types of boxes - block boxes and inline boxes. The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.
 

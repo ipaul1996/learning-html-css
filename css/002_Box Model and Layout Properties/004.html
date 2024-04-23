@@ -1,0 +1,73 @@
+<!-- float -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        box-sizing: border-box;
+        border: 1px solid blue;
+        width: 100%;
+        float: left;
+        /* 
+            values: none, left, right, inline-start, inline-end
+
+            The float CSS property places an element on the left or right side of 
+            its container, allowing text and inline elements to wrap around it. 
+            The element is removed from the normal flow of the page, though still 
+            remaining a part of the flow (in contrast to absolute positioning).
+
+            when an element is floated, it is taken out of the normal flow of the document 
+            (though still remaining part of it). It is shifted to the left, or right, until 
+            it touches the edge of its containing box, or another floated element.
+
+            left: The element must float on the left side of its containing block.
+
+            right: The element must float on the right side of its containing block.
+
+            none: The element must not float.
+
+            inline-start: The element must float on the start side of its containing 
+            block. That is the left side with ltr scripts, and the right side with 
+            rtl scripts.
+
+            inline-end: The element must float on the end side of its containing block. 
+            That is the right side with ltr scripts, and the left side with rtl scripts.
+        */
+      }
+
+      div {
+        margin: 5px;
+        width: 50px;
+        height: 150px;
+      }
+
+      .left {
+        float: left;
+        background: pink;
+      }
+
+      .right {
+        float: right;
+        background: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="left">1</div>
+      <div class="left">2</div>
+      <div class="right">3</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+        sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+        iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+        aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+        congue.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+What is stacking order?
+Every element in an HTML document can be either in front of or behind every other 
+element in the document. This is known as the stacking order.
+
+Stacking without the z-index property:
+When the z-index property is not specified on any element, elements are stacked in 
+the following order (from bottom to top):
+
+1. The background and borders of the root element.
+2. Descendant non-positioned elements, in order of appearance in the HTML.
+This is called the natural stacking order.
+3. Descendant positioned elements, in order of appearance in the HTML.
+[Any positioned elements (and their children) are displayed in front of any 
+non-positioned elements. Positioned elements have a position value relative, 
+absolute, sticky or fixed. Non-positioned elements are the ones with default 
+position (static)]
+
+Demo: https://codepen.io/Indrajit-Paul-the-encoder/pen/abxQowE
+
+If we want to create a custom stacking order, we can use the z-index 
+property on a positioned element(an element with position value other than static). 
+The z-index property can be specified with an integer value (positive, zero, or negative), 
+which represents the position of the element along an imaginary z-axis. We may imagine 
+the page as a stack of layers, each one having a number. Layers are rendered in 
+numerical order, with larger numbers above smaller numbers.
+
+Bottom layer --> Farthest from the observer
+Top layer --> Closest to the observer
+Layer 0 -->	Default rendering layer
+(When no z-index property is specified, elements are rendered on the default 
+rendering layer (Layer 0). It is equivalent to z-index: 0 or z-index: auto)
+Layer X --> Layers with positive z-index values
+Layer -X --> Layers with negative z-index values
+(If several elements share the same z-index value (i.e., they are placed on the same layer)
+the above 3 stacking rules apply)
+
+There is one exception - flex children can use z-index even if they're non-positioned.
+
+
+Stacking Context:-
+A stacking context in CSS is a conceptual area where elements are rendered and 
+layered according to their stacking order. Each stacking context has its own stack of 
+elements and they operates independently of others on the page. This means that 
+the stacking order of elements within one context does not affect the stacking order 
+of elements in another context.
+In the following scenarios stacking context is formed,
+Root element of the document (<html>).
+Element with a position value absolute or relative and z-index value other than auto.
+Element with a position value fixed or sticky.
+Element that is a child of a flex container, with z-index value other than auto.
+Element that is a child of a grid container, with z-index value other than auto.
+Element with an opacity value less than 1.
+etc.
+
+Example 1: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context_example_1
+Example 2: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context_example_2
+Example 3: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context_example_3
+
+
+

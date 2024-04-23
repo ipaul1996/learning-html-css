@@ -1,0 +1,251 @@
+Flexbox, known formally as the flexible box layout module, is a powerful tool 
+designed for one-dimensional layout. It excels in distributing space efficiently 
+among items in an interface and offers robust alignment capabilities. When we 
+describe flexbox as being one-dimensional we are describing the fact that flexbox 
+deals with layout in one dimension at a time — either as a row or as a column.
+When working with flexbox we need to think in terms of two axes — the main axis and 
+the cross axis.
+
+Main axis and Cross axis:
+In Flexbox, the main axis and cross axis are fundamental concepts that govern 
+how flex items are laid out within a flex container.
+The main axis is defined by the flex-direction property set on the flex container.
+The cross axis is perpendicular to the main axis.
+
+
+flex-direction:
+
+If the flex-direction is set to:
+- row(default value), row-reverse: The main axis runs from left to right or right to left 
+respectively, and the cross axis runs from top to bottom. (For English)
+
+- column, column-reverse: The main axis runs from top to bottom or bottom to 
+top respectively, and the cross axis runs from left to right. (For English)
+
+(The flex-items flows toward the direction of the main axis.)
+
+Flex Container:
+A flex container is a designated area within a document where flexbox layout rules 
+are applied. To designate an area as a flex container, we simply set its display 
+property to flex. Once this is done, the immediate children of that container
+automatically become flex items, subject to flexbox layout rules.
+
+As with all properties in CSS, some initial values are defined, so the contents 
+of a new flex container will behave in the following way:
+
+Items display in a row (the flex-direction property's default is row).
+- The items start from the start edge of the main axis.
+- The items do not stretch on the main dimension but can shrink.
+- The items will stretch to fill the size of the cross-axis.
+- The flex-basis property is set to auto. This means that, in each case, it will be 
+equal to the flex item width in horizontal writing mode, and the flex item height in 
+vertical writing mode. If the corresponding width/height is also set to auto, the 
+flex-basis content value is used instead.
+- The flex-wrap property is set to nowrap. This means that the flex items will always 
+remain in a single row or column, overflowing their container if their combined 
+width/height exceeds the containing element width/height.
+
+The result of this is that your items will all line up in a row, using the size 
+of the content as their size in the main axis. If there are more items than can 
+fit in the container, they will not wrap but will instead overflow. If some items 
+are taller than others, all items will stretch along the full length of the 
+cross-axis.
+
+
+
+flex-wrap:
+It controls whether flex items are forced onto a single line or can wrap onto multiple 
+lines within a flex container. This property helps manage how flex items behave when 
+the container's space is insufficient to accommodate them all on a single line.
+
+Here are the possible values for the flex-wrap property:
+
+- nowrap: This is the default value. It specifies that flex items should remain on 
+a single line, even if it means they overflow the container. The default behavior is for 
+flex items to shrink to fit the container's width if necessary. When there isn't enough 
+space for all flex items to fit within the container's width, the flex items will shrink 
+proportionally according to their flex-shrink values. By default, flex items have a 
+flex-shrink value of 1, which means they can shrink equally to fit the available space. 
+If the content of the flex items cannot be further compressed without causing overflow, 
+the items themselves will start overflowing the container which can be handled using
+overflow.
+
+- wrap: This value allows flex items to wrap onto multiple lines if necessary. If 
+there's not enough space for all items to fit on one line, they will wrap onto the 
+next line(s). The direction of the wrap is along the cross axis.
+
+- wrap-reverse: Similar to wrap, but it reverses the direction of wrapping. If flex 
+items wrap onto multiple lines, they will wrap in the opposite direction of the 
+Cross axis.
+
+
+flex lines:
+When flex items are arranged in a flex container, they are organized into one or more flex lines. 
+A flex line is a line that contains one or more flex items. By default, flex items are laid out in 
+a single line along the main axis of the flex container. However, if there isn't enough space for 
+all the items to fit on one line, and if the flex-wrap property is set to wrap or wrap-reverse, the 
+flex items will be distributed across multiple lines.
+
+Each line of flex items within the flex container constitutes a flex line. The alignment and 
+distribution of flex lines within the flex container are controlled by the align-content property. 
+This property determines how extra space in the cross axis of the flex container is distributed 
+among the flex lines.
+
+
+justify-content: 
+It is used in flexbox layouts to control how flex items are aligned along the main 
+axis of the flex container for all the rows or columns(depending upon flex-direction) 
+in case wraping.  It controls the distribution of space between and around flex items 
+in the container.
+
+values: flex-start, flex-end, center, space-between, space-around, space-evenly
+
+flex-start(default): This value aligns flex items at the start of the main axis of the 
+flex container.
+
+flex-end: This value aligns flex items at the end of the main axis of the 
+flex container.
+
+center: This value aligns flex items at the center of the main axis of 
+the flex container.
+
+space-between: This value distributes flex items evenly along the main axis 
+of the flex container. The first item aligns to the start of the container, 
+the last item aligns to the end, and the remaining space is distributed evenly 
+between the items. There is no space before the first item or after the last item.
+
+space-around: This value distributes flex items evenly along the main axis of the 
+flex container, with equal space around them. This means that there is space before 
+the first item, between each pair of adjacent items, and after the last item. The amount 
+of space before the first item and after the last item is half the size of the space 
+between items.
+
+space-evenly: This value distributes flex items evenly along the main axis of the flex 
+container, with equal space between them as well as before the first item and after 
+the last item.
+
+
+
+align-items: 
+It is used in flexbox layouts to control the alignment of flex items along the 
+cross axis of the flex container. 
+
+values: flex-start, flex-end, center, baseline, stretch
+
+flex-start: Aligns flex items at the start of the cross axis of the flex container.
+
+flex-end: Aligns flex items at the end of the cross axis of the flex container.
+
+center: Centers flex items along the cross axis of the flex container.
+
+baseline: Aligns flex items such that their baselines align. Each item's baseline is 
+determined by the text content within it. This alignment is particularly useful when 
+we have flex items with different font sizes or text content and you want to ensure 
+that their text baselines are aligned for a visually cohesive layout.
+(The "baseline" is a term used in typography and CSS to refer to an imaginary 
+line upon which the characters in a line of text rest. It represents the line 
+that most letters (excluding descenders like "g" or "y") sit on.)
+
+stretch(default value): stretches the flex items to fill the cross-axis of the flex container,
+if the height of the items along the cross-axis are not explicitly mentioned.
+When we apply align-items: stretch to a flex container, it causes all flex items within 
+that container to stretch to match the height of the tallest item along the cross-axis, 
+regardless of their individual content heights.
+
+
+align-content: 
+It is used in multi-line flex containers. It defines how the flex lines are aligned within the 
+flex container when there is extra space in the cross-axis, similar to how justify-content works 
+for the main axis. So it will work along with flex-wrap property with values either wrap or wrap-reverse.
+If there is only one flex line we use align-items instead.
+
+flex-start: This is the default value. It aligns the flex lines at the start of the container's 
+cross-axis.
+flex-end: It aligns the flex lines at the end of the container's cross-axis.
+center: It aligns the flex lines at the center of the container's cross-axis.
+space-between: It evenly distributes the flex lines within the container; 
+the first flex line is at the start of the container's cross-axis, and the last flex 
+line is at the end of the container's cross-axis.
+space-around: It evenly distributes the flex lines within the container, 
+with equal space around each flex line.
+space-evenly: It evenly distributes the flex lines within the container, with equal 
+space between and around each flex line.
+stretch: It stretches the flex lines to fill the container's cross-axis.
+
+align-self:
+It is used to control the alignment of individual flex items along the cross axis 
+within a flex container. It allows you to override the default alignment set by the 
+align-items property for a specific flex item. This property accepts the same alignment 
+values as align-items. We apply the align-self property directly to individual flex 
+items within the flex container. This allows us to customize the alignment of specific 
+items without affecting the alignment of other items in the container.
+
+
+flex-grow:
+A CSS property that defines the ability for a flex item to grow if necessary, 
+relative to the other flex items in the flex container if there is any remaining
+space. The remaining space is the size of the flex container minus the size of all 
+flex items' sizes together. If all sibling items have the same flex grow factor, 
+then all items will receive the same share of remaining space, otherwise it is 
+distributed according to the ratio defined by the different flex grow factors.
+
+flex-grow: <number>;(Default 0 - Flex items do not grow. They will only take up as 
+much space as their content necessitates)
+The <number> value determines the proportion of available space that the flex item 
+should take up compared to other flex items. It is a non-negative number, where higher 
+values signify a higher proportion of space distribution. Negative Values are invalid 
+and will be treated as if they were 0.
+
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item-1 {
+  flex-grow: 1;
+}
+
+.flex-item-2 {
+  flex-grow: 2;
+}
+
+flex-item-2 would take twice space as much as the flex-item-1 out of the 
+available space.
+
+If you set both width and flex-grow for a flex item, 
+- The width property defines the initial width of the item.
+- If there's additional space available in the flex container after accommodating 
+the widths of all items, the flex-grow property determines how much the item should 
+grow relative to others.
+- if max-width is specified for the flex-item it will limit the maximum width a 
+flex item can grow to, regardless of the available space in the flex container.
+
+
+
+flex-shrink:
+It sets the flex shrink factor of a flex item. If the size of all flex items is 
+larger than the flex container, items shrink to fit according to flex-shrink.
+
+flex-shrink: <number>;
+The <number> value determines the factor by which a flex item can shrink relative 
+to other flex items. It is a non-negative number, where higher values signify a 
+higher ability to shrink.
+
+Default Value: 1 - Flex items can shrink if necessary.
+Positive Values: Flex items with positive flex shrink values will shrink 
+more than items with lower flex shrink values when there's not enough space 
+in the flex container.
+Negative Values: These are invalid and will be treated as if they were 0.
+0: The flex item will maintain its specified width or size and will not 
+shrink, regardless of the available space in the flex container.
+
+
+flex-basis:
+
+
+
+flex:
+
+flex: <flex-grow> <flex-shrink> <flex-basis>
+
+

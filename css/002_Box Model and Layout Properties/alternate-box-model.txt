@@ -1,3 +1,5 @@
+/* box-sizing */
+
 The alternate CSS box model:-
 In this model the width and height of an element include the padding and 
 border. This means that the specified width and height of the element 

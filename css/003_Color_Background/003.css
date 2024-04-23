@@ -1,3 +1,5 @@
+/* opacity, background-clip, background-size */
+
 body {
   background-color: yellow;
 }
@@ -25,4 +27,78 @@ h1 {
   opacity: 0.8;
   color: black;
   background-color: red;
+}
+
+.container1 {
+  width: 550px;
+  height: 800px;
+  border: 15px dashed black;
+  padding: 100px;
+  background-image: url("https://images.unsplash.com/photo-1713056941757-c5897c0056aa?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  /* 
+    border-box(default), padding-box, content-box
+    It defines how far the background (color or image) should extend within an element.
+    clip means crop.
+
+    border-box(default): The background extends to the outside edge of the border.
+    padding-box: The background extends to the outside edge of the padding.
+    content-box: The background is painted within (clipped to) the content box.
+    
+  */
+}
+
+.container2 {
+  width: 650px;
+  height: 300px;
+  border: 15px dashed black;
+  padding: 18px;
+  background-image: url("https://plus.unsplash.com/premium_photo-1713112356951-402c687642ec?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*
+    values: auto(default), cover, contain, <length> values, <percentage> values
+
+    It used to control the size of an element's background image. It allows us to specify how the background image should be sized in relation to the element's box.
+
+    contain: The background image is resized to fit within the container while maintaining its aspect ratio. This ensures that the entire background image is visible, but there may be empty space within the container.
+
+    cover: Scales the image (while preserving its ratio) to the smallest possible size to fill the container (that is: both its height and width completely cover the container), leaving no empty space. If the proportions of the background differ from the element, the image is cropped either vertically or horizontally.
+
+    auto: The browser automatically calculates the size of the background image based on its intrinsic dimensions.
+
+    intrinsic dimension of an image: width and height of the image
+    intrinsic propertion of an image: width-to-height ratio of the image
+    CSS <gradient>s have no intrinsic dimensions or intrinsic proportions.
+
+    One-value syntax:
+    background-size: 50%; (the width of the image (height becomes 'auto'))
+    background-size: 3.2em;
+    background-size: 12px;
+    background-size: auto;
+
+    Two-value syntax:
+    background-size: 50% auto; (first value: width of the image, second value: height)
+    background-size: 3em 25%;
+    background-size: auto 6px;
+    background-size: auto auto;
+
+    Based on the intrinsic dimensions and proportions, the rendered size of the background image is computed as follows:
+    - If both components of background-size are specified and are not auto: The background image is rendered at the specified size.
+
+    - If the background-size is contain or cover: While preserving its intrinsic proportions, the image is rendered at the largest size contained within, or covering, the background positioning area. If the image has no intrinsic proportions, then it's rendered at the size of the background positioning area.
+
+    - If the background-size is auto or auto auto:
+      1. If the image has both horizontal and vertical intrinsic dimensions, it's rendered at that size.
+      2. If the image has no intrinsic dimensions and has no intrinsic proportions, it's rendered at the size of the background positioning area.
+      3. If the image has no intrinsic dimensions but has intrinsic proportions, it's rendered as if contain had been specified instead.
+      4. If the image has only one intrinsic dimension and has intrinsic proportions, it's rendered at the size corresponding to that one dimension. The other dimension is computed using the specified dimension and the intrinsic proportions.
+      5. If the image has only one intrinsic dimension but has no intrinsic proportions, it's rendered using the specified dimension and the other dimension of the background positioning area.
+
+    - If the background-size has one auto component and one non-auto component:
+      1. If the image has intrinsic proportions, it's stretched to the specified dimension. The unspecified dimension is computed using the specified dimension and the intrinsic proportions.
+      2. If the image has no intrinsic proportions, it's stretched to the specified dimension. The unspecified dimension is computed using the image's corresponding intrinsic dimension, if there is one. If there is no such intrinsic dimension, it becomes the corresponding dimension of the background positioning area.
+
+  */
 }

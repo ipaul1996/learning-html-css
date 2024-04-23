@@ -1,4 +1,4 @@
-CSS is a style sheet language. CSS is what we use to selectively style HTML elements. 
+CSS(Cascading Style Sheet) is a style sheet language. CSS is what we use to selectively style HTML elements. 
 
 
 selector {
@@ -11,7 +11,7 @@ The whole structure is called a ruleset.
 (The term ruleset is often referred to as just rule.)
 
 Selector: The selector defines which HTML elements the styles should be applied to. 
-Selectors can target elements by their tag name(tag selector or element selector), 
+Selectors can target elements by their tag name(tag selector or element selector or type selector), 
 class(class selector), ID(id selector), attribute(attribute selector), or relationship
 to other elements(Combinators).
 
@@ -28,4 +28,5 @@ Comments in css:
 p {
     color: magenta;
 }
+
 */
