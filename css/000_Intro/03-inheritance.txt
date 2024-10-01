@@ -9,3 +9,7 @@ specifing the following,
 p {
   border: inherit;
 }
+
+In general,
+Properties that relate to text styling and font properties are typically inherited.
+Properties related to layout, dimensions, box model (e.g., margins, paddings), and visual elements (e.g., background, borders) are usually not inherited.
