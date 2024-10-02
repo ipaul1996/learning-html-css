@@ -98,6 +98,9 @@ There are two kinds of box models in CSS, the standard and alternate model.
 The standard CSS box model:-
 In this model, the width and height properties define the size of the content box only. Padding and borders are added to the specified dimensions to determine the total size of the box. This model is implemented by default with box-sizing: content-box.
 
+Here,
+width: width + padding-left + padding-right + border-left + border-right
+height: height + padding-top + padding-bottom + border-top + border-bottom
 
 .box {
   width: 350px;
