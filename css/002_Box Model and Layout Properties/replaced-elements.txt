@@ -1,8 +1,7 @@
 /* object-fit, object-position */
 
-In CSS, a replaced element is an element whose representation is outside the scope of CSS; they're external objects whose representation is independent of the CSS formatting model.
-Put in simpler terms, they're elements whose contents are not affected by the current document's styles. The position of the replaced element can be affected using CSS, but not the contents of the replaced element itself.
-Examples: <audio>, <canvas>, <iframe>, <img>, <input>, <select>, <textarea>, <video>
+
+In CSS, a replaced element is one whose content comes from an external source and is not influenced by the document's styles. This means that while you can style the layout and positioning of these elements (like margins and padding), the actual content itself cannot be altered through CSS. Common examples of replaced elements include `<img>`, `<audio>`, `<video>`, `<iframe>`, `<input>`, `<canvas>`, `<select>`, and `<textarea>`. Understanding replaced elements is crucial for embedding external resources in web applications, as they allow for the inclusion of various media types and user input forms without the content being affected by CSS styling .
 
 ***************************************************************************************
 object-fit:
