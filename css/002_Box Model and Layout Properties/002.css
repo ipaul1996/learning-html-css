@@ -1,30 +1,29 @@
-/* overflow, overflow-x, overflow-y */
+/* Overflow, Overflow-x, Overflow-y */
 
 .container {
   max-width: 400px;
   max-height: 300px;
   border: 1px solid;
-  overflow: scroll;
-  /* values: visible, hidden, scroll, auto */
+  overflow: scroll; /* values: visible, hidden, scroll, auto */
+  
   /*
-  It is a CSS shorthand property sets the desired behavior when content does not 
-  fit in the parent element box (overflows) in the horizontal and/or vertical 
-  direction.
+  The overflow property controls how content behaves when it exceeds the size of 
+  its parent element's box, handling both horizontal (overflow-x) and vertical 
+  (overflow-y) directions.
+
+  Constituent Properties:
+  - overflow-x: Controls the horizontal overflow (left to right).
+  - overflow-y: Controls the vertical overflow (top to bottom).
+
+  Shorthand:
+  - Specifying one value sets both overflow-x and overflow-y.
+  - Specifying two values: first applies to overflow-x, second to overflow-y 
+    (e.g., overflow: hidden visible;).
     
-  Constituent properties: overflow-x, overflow-y
-
-  The overflow property is specified as one or two <overflow> keyword values. 
-  If only one keyword is specified, both overflow-x and overflow-y are set to 
-  the same value. If two keywords are specified, the first value applies to 
-  overflow-x in the horizontal direction and the second one applies to overflow-y 
-  in the vertical direction. (overflow: hidden visible;)
-
-  visible --> Default. The overflow is not clipped. The content renders outside 
-  the element's box
-  hidden --> The overflow is clipped, and the rest of the content will be invisible
-  scroll --> The overflow is clipped, and a scrollbar is added to see the rest of 
-  the content
-  auto --> Similar to scroll, but it adds scrollbars only when necessary
-
+  Values:
+  - visible: (Default) Content is not clipped and can overflow the element's box.
+  - hidden: Overflow is clipped, and excess content is invisible.
+  - scroll: Overflow is clipped, and scrollbars are added to access content.
+  - auto: Behaves like 'scroll', but scrollbars only appear if content overflows.
   */
 }
