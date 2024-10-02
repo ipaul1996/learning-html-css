@@ -1,7 +1,7 @@
 /* box-sizing */
 
 The alternate CSS box model:-
-In this model the width and height of an element include the padding and 
+In this model, the width and height of an element include the padding and 
 border. This means that the specified width and height of the element 
 include the padding and border, and the content area is adjusted to fit within 
 those dimensions. It is implemented with box-sizing: border-box.
@@ -28,3 +28,16 @@ consistent, regardless of padding and border widths.
 
 content box width = 350px - (2 * 25px) - (2 * 5px) = 290px;
 content box height = 150px - (2 * 25px) - (2 * 5px) = 90px;
+
+In the case of the standard box model, the value for box-sizing is 'content-box'.
+This is the default value. When using this setting, the width and height of an element only apply to its content area. Padding and borders are added outside this defined width and height, increasing the overall size of the box. This means that if you set an element’s width to 100%, and also apply padding and borders, the total width of the box will exceed 100% of its parent element.
+
+.content-box {
+    box-sizing: content-box;
+    width: 200px; /* Content area width */
+    padding: 20px; /* Padding added outside */
+    border: 5px solid; /* Border added outside */
+}
+
+We can also use padding-box, although this value is less commonly used. It includes the padding in the box’s dimensions but excludes the border. This can lead to confusion and is not as straightforward as the other two options.
+
