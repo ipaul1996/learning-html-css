@@ -82,17 +82,21 @@ Setting display: inline-grid makes the outer display type inline, while the inne
 What is the CSS box model?
 The CSS box model as a whole applies to block boxes and defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on a page. Inline boxes use just some of the behaviour defined in the box model
 
+
 Parts of a box:-
-Content box: The area where your content is displayed; size it using properties like inline-size and block-size or width and height.
-Padding box: The padding sits around the content as white space; size it using padding and related properties.
-Border box: The border box wraps the content and any padding; size it using border and related properties.
-Margin box: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements; size it using margin and related properties.
+Content box: This is the area where the actual content (text, images, etc.) of the element is displayed. The dimensions can be defined using properties like width, height, inline-size, or block-size.
+
+Padding box: The padding is the space between the content and the border. It acts as a buffer around the content, providing white space that enhances readability. Padding can be set using the padding property.
+
+Border box: The border surrounds the padding (if any) and the content. It can be styled with properties such as border, border-width, border-style, and border-color.
+
+Margin box: The margin is the outermost layer, creating space between the element and surrounding elements. It can be adjusted using the margin property. Margins are transparent and do not have any colour.
 
 Types of Box Models in CSS:
 There are two kinds of box models in CSS, the standard and alternate model.
 
 The standard CSS box model:-
-If you set width and height property values on a box, these values define width and height of the content box. Any padding and borders are then added to those dimensions to get the total size taken up by the box. It is implemented by, (box-sizing: content-box)
+In this model, the width and height properties define the size of the content box only. Padding and borders are added to the specified dimensions to determine the total size of the box. This model is implemented by default with box-sizing: content-box.
 
 
 .box {
