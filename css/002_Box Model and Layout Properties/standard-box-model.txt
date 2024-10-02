@@ -5,41 +5,82 @@ margin, margin-top, margin-right, margin-bottom, margin-left, display, box-sizin
 
 
 
-Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items.
-In CSS we have two types of boxes - block boxes and inline boxes. The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.
+Everything in CSS is a box, and understanding these boxes is crucial for creating complex layouts and aligning items. In CSS, there are two types of boxes: block boxes and inline boxes. The box type determines how the element interacts with other elements on the page and in the page's flow. Boxes have two display types: outer display type and inner display type.
 
 Outer display type:
 
 If a box has an outer display type of block(display: block;), then,
 
-The box will break onto a new line.
-The width and height properties are respected.
-Padding, margin and border will cause other elements to be pushed away from the box.
-If width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+- The box will break onto a new line.
+- If width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+- The width and height properties are respected. If width and height are specified, the element will size itself accordingly; otherwise, it expands horizontally to fill its container and vertically according to its content.
+- Padding, margin and border will cause other elements to be pushed away from the box.
+
+.block-box {
+  display: block;
+  width: 200px;
+  border: 1px solid;
+}
+
+display: block, is the default value for the following elements:
+<div>, <h1>-<h6>, <p>, <ul>, <ol>, <li>, <table>, <footer>, <form>, <header>, <hr>, <section>, <video>
+
 
 If a box has an outer display type of inline(display: inline;), then,
-The box will not break onto a new line.
-The width and height properties will not apply.
-Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
-Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
 
+- The box will not break onto a new line.
+- The width and height properties will not apply.
+- Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+- Left and right padding, margins, and borders will apply, causing other inline boxes to move away from the box.
+
+.inline-box {
+  display: inline;
+  border: 1px solid;
+  padding: 5px;
+}
+
+display: inline, is the default value to the following elements:  
+<img>, <a>, <span>, <input>, <be>, <button>, <em>, <I>, <b>, <map>, <output>
 
 
 Inner display type:
-Boxes also have an inner display type, which dictates how elements inside that box are laid out.
-Block and inline layout is the default way things behave on the web. By default and without any other instruction, the elements inside a box are also laid out in normal flow(Block-level elements typically stack vertically on top of each other, each taking up the full width available to their parent container, and automatically starting on a new line and Inline-level elements flow within the text content, typically sitting next to each other horizontally within their containing block).
-We can change the inner display type for example by setting display: flex;. The element will still use the outer display type block but this changes the inner display type to flex. Any direct children of this box will become flex items and behave according to the Flexbox specification.
+The inner display type defines how the contents inside a box are laid out. It complements the outer display type, which determines how the element itself behaves in relation to other elements. The inner display type controls the layout behaviour of the children (elements inside the container). In normal flow, block-level elements (like div, p) stack vertically, while inline-level elements (like span, a) flow horizontally within their container. By changing the inner display type, such as using display: flex; or display: grid;, we can modify how child elements are laid out.
 
-Examples:
+Setting display: flex on a container changes the inner display type to flex, making its direct children flex items. This means:
+- Children are laid out in a flexible, predictable way, either in a row or a column (depending on the flex direction).
+- Flexbox allows control over alignment, spacing, and size distribution of child elements, all without affecting the outer block or inline behaviour.
 
-- A paragraph with a border added in CSS. The browser renders this as a block box. The paragraph starts on a new line and extends the entire available width.
-- A list, which is laid out using display: flex. This establishes flex layout for the children of the container, which are flex items. The list itself is a block box and — like the paragraph — expands to the full container width and breaks onto a new line.
-- A block-level paragraph, inside which are two <span> elements. These elements would normally be inline, however, one of the elements has a class of "block" which gets set to display: block.
+.flex-container {
+  display: flex; /* Outer display type is still block, but the inner becomes flex */
+}
+
+With display: grid, the inner display type becomes grid. This enables you to lay out child elements in a two-dimensional grid (rows and columns). It offers fine control over positioning and spacing within a grid.
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+}
+/* The .grid-container remains a block-level element, but the inner layout of its children is controlled by the grid system. */
 
 
+Setting display: inline-flex makes the outer display type inline, while the inner display type becomes flex. This means:
+- The element behaves as an inline element in the document flow (it won’t break onto a new line).
+- The child elements inside it follow Flexbox layout rules.
+
+.inline-flex-container {
+  display: inline-flex; /* Behaves inline, but children are laid out in flexbox */
+}
+
+Setting display: inline-grid makes the outer display type inline, while the inner display type becomes grid.
+
+.inline-grid-container {
+  display: inline-grid;
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+}
+-------------------------------------------------------------------------------------------------------------------------
 
 What is the CSS box model?
-The CSS box model as a whole applies to block boxes and defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on a page. Inline boxes use just some of the behavior defined in the box model
+The CSS box model as a whole applies to block boxes and defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on a page. Inline boxes use just some of the behaviour defined in the box model
 
 Parts of a box:-
 Content box: The area where your content is displayed; size it using properties like inline-size and block-size or width and height.
