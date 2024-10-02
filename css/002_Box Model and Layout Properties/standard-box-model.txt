@@ -113,6 +113,10 @@ height: height + padding-top + padding-bottom + border-top + border-bottom
 Here, the actual space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).
 Point to be noted that the margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
 
+Note:
+=====
+- When you don't set a width for a box with static or relative positioning in CSS, it automatically expands to 100% of its parent's width, but padding and borders will push the content inward, reducing the space available for the actual content. In contrast, if you explicitly set the box's width to 100%, the box still fills the parent's width, but in this case, the added padding and borders will push the box outward, causing it to exceed the parent's width. For example, a box with a width of 100%, 20px of padding on each side, and a 5px border will take up 150% of the parent's width in total. This behaviour illustrates how padding and borders can affect the overall dimensions of an element in relation to its container.
+
 ------------------------------------------------------------------------------------------------------------
 
 Width:
