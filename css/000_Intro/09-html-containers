@@ -1,0 +1,41 @@
+containers --> div, header, nav, footer, main, section, article, aside
+
+<div>
+Use it for: A general-purpose container.
+When to use: When you just need to group elements together for layout or styling, but it doesn’t need any specific meaning.
+Examples: Wrapping a group of images, form elements, or layout grids.
+
+<header>
+Use it for: The top section of a page or section.
+When to use: At the top of the page or section, usually for the title, logo, or navigation menu.
+Examples: A page title with a logo and navigation links.
+
+<nav>
+Use it for: Menus or navigation links.
+When to use: When you want to create a menu that helps users move between different sections or pages.
+Examples: A top bar with links like "Home," "About," "Services."
+
+<footer>
+Use it for: The bottom section of a page.
+When to use: At the end of the page or section, usually for things like copyright info, contact details, or links to policies.
+Examples: A footer with copyright info and links to privacy policies.
+
+<main>
+Use it for: The primary content of the page.
+When to use: To wrap the main content of your webpage that is unique and relevant to that page.
+Examples: The main article or the content a user is there to read or interact with.
+
+<section>
+Use it for: Grouping related content.
+When to use: When you want to organize related content together under a heading.
+Examples: A "Services" section with a heading and details about each service.
+
+<article>
+Use it for: Standalone pieces of content.
+When to use: For content that could stand alone, like a blog post or a news article.
+Examples: A blog post with a title and text.
+
+<aside>
+Use it for: Related but secondary content.
+When to use: For extra information or links related to the main content but not critical to it.
+Examples: A sidebar with ads, related links, or extra notes.
